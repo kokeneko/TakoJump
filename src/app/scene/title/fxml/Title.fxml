@@ -10,7 +10,7 @@
    <children>
       <Label fx:id="titleLogo" layoutX="160.0" layoutY="76.0" text="タコジャンプ" />
       <Label fx:id="startLabel" layoutX="174.0" layoutY="235.0" onMouseClicked="#startGame" text="スタート" />
-      <Label fx:id="rankingLabel" layoutX="167.0" layoutY="277.0" text="ランキング" />
+      <Label fx:id="rankingLabel" layoutX="167.0" layoutY="277.0" onMouseClicked="#transitionRanking" text="ランキング" />
       <Polygon fx:id="cursor" layoutX="135.0" layoutY="259.0" rotate="90.0" scaleX="0.2" scaleY="0.2" stroke="BLACK" strokeType="INSIDE">
         <points>
           <Double fx:value="-50.0" />

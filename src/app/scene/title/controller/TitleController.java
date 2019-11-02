@@ -7,15 +7,25 @@ import javafx.scene.shape.Polygon;
 
 public class TitleController {
 
-	@FXML Label titleLogo;
-	@FXML Label startLabel, rankingLabel;
-	@FXML Polygon cursor;
+	@FXML private Label titleLogo;
+	@FXML private Label startLabel, rankingLabel;
+	@FXML private Polygon cursor;
+
+	private Transition transition;
+
+	@FXML
+	private void initialize() {
+		transition = new Transition();
+	}
 
 	@FXML
 	private void startGame() {
-		Transition transition = new Transition();
 		transition.transitionTo(Transition.GAME_PATH);
+	}
 
+	@FXML
+	private void transitionRanking() {
+		transition.transitionTo(Transition.RANKING_PATH);
 	}
 
 }
