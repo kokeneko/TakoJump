@@ -2,8 +2,11 @@ package app.scene;
 
 import java.io.IOException;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -20,10 +23,11 @@ public class Transition {
 		try {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource(TITLE_PATH));
 			scene = new Scene(root, 400, 400);
+			scene.setOnKeyPressed(e -> keyPressedEvent(e, root.getChildren()));
+			root.getChildren();
 			stage.setScene(scene);
 			stage.show();
 		} catch (IOException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 
@@ -37,6 +41,24 @@ public class Transition {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void keyPressedEvent(KeyEvent e, ObservableList<Node> observableList) {
+		switch(e.getCode()) {
+		case UP: up(observableList); break;
+		case DOWN: down(observableList); break;
+		default: break;
+		}
+	}
+
+	public void up(ObservableList<Node> observableList) {
+		System.out.println("up");
+		observableList.get(3).setLayoutY(observableList.get(1).getLayoutY() + 18);
+	}
+
+	public void down(ObservableList<Node> observableList) {
+		System.out.println("down");
+		observableList.get(3).setLayoutY(observableList.get(2).getLayoutY() + 18);
 	}
 
 }
