@@ -45,6 +45,7 @@ public class SceneManager {
 		switch(e.getCode()) {
 		case UP: cursor.up(); break;
 		case DOWN: cursor.down(); break;
+		case ENTER: cursor.select(); break;
 		default: break;
 		}
 	}

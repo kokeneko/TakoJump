@@ -20,7 +20,6 @@ public class TitleController {
 	@FXML
 	private void startGame() {
 		sceneManager.transitionTo(SceneManager.GAME_PATH);
-
 	}
 
 	@FXML
