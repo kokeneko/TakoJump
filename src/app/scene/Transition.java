@@ -2,9 +2,7 @@ package app.scene;
 
 import java.io.IOException;
 
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -23,8 +21,8 @@ public class Transition {
 		try {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource(TITLE_PATH));
 			scene = new Scene(root, 400, 400);
-			scene.setOnKeyPressed(e -> keyPressedEvent(e, root.getChildren()));
-			root.getChildren();
+			Cursor cursor = new Cursor(root.getChildren().get(3), root.getChildren().subList(1, 3));
+			scene.setOnKeyPressed(e -> keyPressedEvent(e, cursor));
 			stage.setScene(scene);
 			stage.show();
 		} catch (IOException e) {
@@ -43,22 +41,12 @@ public class Transition {
 		}
 	}
 
-	public void keyPressedEvent(KeyEvent e, ObservableList<Node> observableList) {
+	private void keyPressedEvent(KeyEvent e, Cursor cursor) {
 		switch(e.getCode()) {
-		case UP: up(observableList); break;
-		case DOWN: down(observableList); break;
+		case UP: cursor.up(); break;
+		case DOWN: cursor.down(); break;
 		default: break;
 		}
-	}
-
-	public void up(ObservableList<Node> observableList) {
-		System.out.println("up");
-		observableList.get(3).setLayoutY(observableList.get(1).getLayoutY() + 18);
-	}
-
-	public void down(ObservableList<Node> observableList) {
-		System.out.println("down");
-		observableList.get(3).setLayoutY(observableList.get(2).getLayoutY() + 18);
 	}
 
 }

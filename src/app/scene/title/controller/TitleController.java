@@ -12,17 +12,16 @@ public class TitleController {
 	@FXML private Polygon cursorPolygon;
 
 	private Transition transition;
-	//private Cursor cursor;
 
 	@FXML
 	private void initialize() {
 		transition = new Transition();
-		//cursor = new Cursor(cursorPolygon);
 	}
 
 	@FXML
 	private void startGame() {
 		transition.transitionTo(Transition.GAME_PATH);
+
 	}
 
 	@FXML
