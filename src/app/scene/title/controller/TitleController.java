@@ -9,13 +9,15 @@ public class TitleController {
 
 	@FXML private Label titleLogo;
 	@FXML private Label startLabel, rankingLabel;
-	@FXML private Polygon cursor;
+	@FXML private Polygon cursorPolygon;
 
 	private Transition transition;
+	//private Cursor cursor;
 
 	@FXML
 	private void initialize() {
 		transition = new Transition();
+		//cursor = new Cursor(cursorPolygon);
 	}
 
 	@FXML
