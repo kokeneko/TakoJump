@@ -8,7 +8,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class Transition {
+public class SceneManager {
 	public static Stage stage = new Stage();
 	public static Scene scene;
 

@@ -1,32 +1,31 @@
 package app.scene.title.controller;
 
-import app.scene.Transition;
+import app.scene.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Polygon;
 
 public class TitleController {
-
 	@FXML private Label titleLogo;
 	@FXML private Label startLabel, rankingLabel;
 	@FXML private Polygon cursorPolygon;
 
-	private Transition transition;
+	private SceneManager sceneManager;
 
 	@FXML
 	private void initialize() {
-		transition = new Transition();
+		sceneManager = new SceneManager();
 	}
 
 	@FXML
 	private void startGame() {
-		transition.transitionTo(Transition.GAME_PATH);
+		sceneManager.transitionTo(SceneManager.GAME_PATH);
 
 	}
 
 	@FXML
 	private void transitionRanking() {
-		transition.transitionTo(Transition.RANKING_PATH);
+		sceneManager.transitionTo(SceneManager.RANKING_PATH);
 	}
 
 }

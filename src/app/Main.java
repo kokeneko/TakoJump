@@ -1,15 +1,15 @@
 package app;
 
-import app.scene.Transition;
+import app.scene.SceneManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	private Transition transition  = new Transition();;
+	private SceneManager sceneManager  = new SceneManager();
 
 	@Override
 	public void start(Stage primaryStage) {
-		transition.transitionFirstScene();
+		sceneManager.transitionFirstScene();
 	}
 
 	public static void main(String[] args) {
