@@ -1,6 +1,6 @@
 package app.scene.result.controller;
 
-import app.scene.Transition;
+import app.scene.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -10,8 +10,8 @@ public class ResultController {
 
 	@FXML
 	private void hello() {
-		Transition transition = new Transition();
-		transition.transitionTo(Transition.TITLE_PATH);
+		SceneManager sceneManager = new SceneManager();
+		sceneManager.transitionTo(SceneManager.TITLE_PATH);
 	}
 
 }

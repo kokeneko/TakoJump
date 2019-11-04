@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="app.title.controller.TitleController">
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="app.scene.ranking.controller.RankingController">
    <children>
       <Button fx:id="helloButton" layoutX="161.0" layoutY="181.0" mnemonicParsing="false" onAction="#hello" text="Button" />
    </children>
