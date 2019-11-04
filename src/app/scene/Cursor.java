@@ -14,10 +14,10 @@ public class Cursor {
 	public Cursor(Node cursor, List<Node> optionList) {
 		this.cursor = cursor;
 		this.optionList = optionList;
+		selectedOptionNumber = 0;
 	}
 
 	public void up() {
-		System.out.println("up");
 		if (selectedOptionNumber > 0) {
 			selectedOptionNumber -= 1;
 		}
@@ -28,7 +28,6 @@ public class Cursor {
 	}
 
 	public void down() {
-		System.out.println("down");
 		if (selectedOptionNumber < optionList.size() - 1) {
 			selectedOptionNumber += 1;
 		}

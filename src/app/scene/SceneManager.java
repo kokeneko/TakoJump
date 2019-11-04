@@ -1,6 +1,8 @@
 package app.scene;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,9 +19,12 @@ public class SceneManager {
 	public static final String RESULT_PATH = "./result/fxml/Result.fxml";
 	public static final String RANKING_PATH = "./ranking/fxml/Ranking.fxml";
 
+	private final Map<String, AnchorPane> roots = new HashMap<>();
+
 	public void transitionFirstScene() {
 		try {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource(TITLE_PATH));
+			roots.put(TITLE_PATH, root);
 			scene = new Scene(root, 400, 400);
 			Cursor cursor = new Cursor(root.getChildren().get(3), root.getChildren().subList(1, 3));
 			scene.setOnKeyPressed(e -> keyPressedEvent(e, cursor));
@@ -33,8 +38,20 @@ public class SceneManager {
 
 	public void transitionTo(String path) {
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource(path));
+			AnchorPane root;
+			if (roots.get(path) == null) {
+				root = (AnchorPane)FXMLLoader.load(getClass().getResource(path));
+				roots.put(path, root);
+			}
+			root = roots.get(path);
 			scene.setRoot(root);
+			if (path.equals(TITLE_PATH)) {
+				Cursor cursor = new Cursor(root.getChildren().get(3), root.getChildren().subList(1, 3));
+				scene.setOnKeyPressed(e -> keyPressedEvent(e, cursor));
+			}
+			else {
+				scene.setOnKeyPressed(null);
+			}
 			stage.setScene(scene);
 		} catch (IOException e) {
 			e.printStackTrace();
