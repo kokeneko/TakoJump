@@ -49,6 +49,12 @@ public class SceneManager {
 				Cursor cursor = new Cursor(root.getChildren().get(3), root.getChildren().subList(1, 3));
 				scene.setOnKeyPressed(e -> keyPressedEvent(e, cursor));
 			}
+			else if (path.equals(RESULT_PATH)) {
+				// UP/DOWNキーでのカーソルの移動のみ
+				// エンターキーでの画面遷移は未実装
+				Cursor cursor = new Cursor(root.getChildren().get(7), root.getChildren().subList(5, 7));
+				scene.setOnKeyPressed(e -> keyPressedEvent(e, cursor));
+			}
 			else {
 				scene.setOnKeyPressed(null);
 			}
