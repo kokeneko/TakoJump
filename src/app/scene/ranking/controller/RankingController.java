@@ -1,11 +1,12 @@
 package app.scene.ranking.controller;
 
+import java.util.List;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class RankingController {
-
-	@FXML Button helloButton;
+	@FXML private List<Label> rankList ;
 
 	@FXML
 	private void hello() {
