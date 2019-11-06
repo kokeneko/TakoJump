@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import app.scene.result.controller.ResultController;
+import app.scene.title.controller.TitleController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
@@ -26,14 +28,13 @@ public class SceneManager {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource(TITLE_PATH));
 			roots.put(TITLE_PATH, root);
 			scene = new Scene(root, 400, 400);
-			Cursor cursor = new Cursor(root.getChildren().get(3), root.getChildren().subList(1, 3));
+			Cursor cursor = new Cursor(root.getChildren().get(3), TitleController.titleOptionsLabel, TitleController.titleOptionsPath);
 			scene.setOnKeyPressed(e -> keyPressedEvent(e, cursor));
 			stage.setScene(scene);
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public void transitionTo(String path) {
@@ -46,13 +47,11 @@ public class SceneManager {
 			root = roots.get(path);
 			scene.setRoot(root);
 			if (path.equals(TITLE_PATH)) {
-				Cursor cursor = new Cursor(root.getChildren().get(3), root.getChildren().subList(1, 3));
+				Cursor cursor = new Cursor(root.getChildren().get(3), TitleController.titleOptionsLabel, TitleController.titleOptionsPath);
 				scene.setOnKeyPressed(e -> keyPressedEvent(e, cursor));
 			}
 			else if (path.equals(RESULT_PATH)) {
-				// UP/DOWNキーでのカーソルの移動のみ
-				// エンターキーでの画面遷移は未実装
-				Cursor cursor = new Cursor(root.getChildren().get(7), root.getChildren().subList(5, 7));
+				Cursor cursor = new Cursor(root.getChildren().get(7), ResultController.resultOptionsLabel, ResultController.resultOptionsPath);
 				scene.setOnKeyPressed(e -> keyPressedEvent(e, cursor));
 			}
 			else {
