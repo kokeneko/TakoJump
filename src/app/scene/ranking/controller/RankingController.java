@@ -14,13 +14,10 @@ public class RankingController {
 	@FXML
 	private void initialize() {
 		DatabaseManager databaseManager = new DatabaseManager();
-		//スコアは仮
-		databaseManager.writeData(1000);
 		dataList = databaseManager.getData();
 		for (int i = 0; i < dataList.size(); i++) {
 			rankList.get(i).setText((i + 1) + "位 " + dataList.get(i) + "点");
 		}
-
 	}
 
 }
