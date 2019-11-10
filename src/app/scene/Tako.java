@@ -1,7 +1,20 @@
 package app.scene;
 
+import javafx.scene.image.ImageView;
+
 public class Tako {
 
-	private static final String TAKO_NORMAL = "./images/tako.png";
+	private ImageView takoImage;
 
+	public Tako(ImageView tako) {
+		this.takoImage = tako;
+	}
+
+	public void leftSlide() {
+		takoImage.setLayoutX(takoImage.getLayoutX() - 10);
+	}
+
+	public void rightSlide() {
+		takoImage.setLayoutX(takoImage.getLayoutX() + 10);
+	}
 }
