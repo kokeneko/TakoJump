@@ -17,6 +17,7 @@ public class GameController {
 	private void initialize() {
 		Floor floor = new Floor();
 		image = floor.assignImage("normal");
+
 		//始めの床を生成し、paneに載せる
 		base.getChildren().add(floor.generate(image, 0, 300, 13));
 	}
