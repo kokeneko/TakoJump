@@ -1,14 +1,15 @@
 package app.scene;
 
 import java.net.URISyntaxException;
+
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Floor {
 	private String type;//ブロックの種類
-	private Group group = new Group(); //床をグループ化する
 	private static final  String FLOOR_NORMAL = "./images/floor_normal.png";
+	public Group group = new Group(); //床をグループ化する
 
 	//画像をtype毎に代入する
 	public Image assignImage(String type) {
