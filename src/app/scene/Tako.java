@@ -7,7 +7,6 @@ public class Tako {
 
 	private ImageView takoImage;
 	private boolean isAir; //空中にいるかどうか
-	Floor floor = new Floor();
 
 	public Tako(ImageView tako) {
 		this.takoImage = tako;
@@ -28,10 +27,10 @@ public class Tako {
 
 	public AnchorPane jump(AnchorPane base) {
 		//base.getChildren().get(2)が一番下の床
-		if(this.isAir == true) {
+		if (this.isAir == true) {
 			base.getChildren().get(2).setLayoutY(base.getChildren().get(2).getLayoutY() - 10) ;
 			//床とタコの画像が被ったら
-			if(base.getChildren().get(2).getBoundsInParent().intersects(takoImage.getBoundsInParent())) {
+			if (base.getChildren().get(2).getBoundsInParent().intersects(takoImage.getBoundsInParent())) {
 				base.getChildren().get(2).setLayoutY(base.getChildren().get(2).getLayoutY());
 				System.out.print("地上だよ\n");
 				this.isAir = false;
