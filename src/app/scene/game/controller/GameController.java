@@ -27,12 +27,18 @@ public class GameController {
 
 		//始めの床を生成し、paneに載せる
 		base.getChildren().add(floor.generate(image, 0, 300, 13));
+
 	}
 
 	@FXML
 	private void hello() {
 		SceneManager sceneManager = new SceneManager();
 		sceneManager.transitionTo(SceneManager.RESULT_PATH);
+	}
+
+	@FXML
+	public AnchorPane getAnchorPane() {
+		return base;
 	}
 
 	private void keyPressedEvent(KeyEvent e, Tako tako) {
