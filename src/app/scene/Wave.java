@@ -24,8 +24,8 @@ public class Wave {
 			waveUp(10);
 		});
 		timer = new Timeline(keyFrame);
-        timer.setCycleCount(Timeline.INDEFINITE);
-        timer.play();
+		timer.setCycleCount(Timeline.INDEFINITE);
+		timer.play();
 	}
 
 	public void waveUp(int risingWidth) {
