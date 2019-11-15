@@ -16,5 +16,6 @@
          </image>
       </ImageView>
       <fx:include source="GameChildWave.fxml" />
+      <fx:include source="GameBackScreen.fxml" />
    </children>
 </AnchorPane>
