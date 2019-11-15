@@ -32,8 +32,12 @@ public class ResultController {
 		resultOptionsPath.add(SceneManager.GAME_PATH);
 		resultOptionsPath.add(SceneManager.TITLE_PATH);
 
-		// スコアは仮に1000で固定
-		setScore(1000);
+		// スコアは仮に適当な値を入れてます
+		// 確認するときは勝手に値を入れてね
+		// この変数は後で消します
+		int tmpScore = 10000;
+		showNewRecordLabel(tmpScore);
+		setScore(tmpScore);
 		setHighScore();
 	}
 
@@ -56,6 +60,15 @@ public class ResultController {
 
 	private void setHighScore() {
 		highScoreLabel.setText(databaseManager.getData().get(0) + "");
+	}
+
+	private void showNewRecordLabel(int score) {
+		if (score > databaseManager.getData().get(0)) {
+			newRecordLabel.setVisible(true);
+		}
+		else {
+			newRecordLabel.setVisible(false);
+		}
 	}
 
 }

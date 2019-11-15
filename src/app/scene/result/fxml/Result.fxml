@@ -14,7 +14,7 @@
             <Font size="31.0" />
          </font>
       </Label>
-      <Label fx:id="newRecordLabel" layoutX="150.0" layoutY="95.0" text="new record!!" textFill="RED" />
+      <Label fx:id="newRecordLabel" layoutX="150.0" layoutY="95.0" text="new record!!" textFill="RED" visible="false" />
       <Label fx:id="scoreLabel" layoutX="150.0" layoutY="122.0" text="999999">
          <font>
             <Font size="31.0" />
