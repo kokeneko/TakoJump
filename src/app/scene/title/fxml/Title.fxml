@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.title.controller.TitleController">
+<AnchorPane prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #001E43;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.title.controller.TitleController">
    <children>
       <Label fx:id="titleLogo" layoutX="160.0" layoutY="76.0" text="タコジャンプ" />
       <Label fx:id="startLabel" layoutX="174.0" layoutY="235.0" onMouseClicked="#startGame" text="スタート" />
