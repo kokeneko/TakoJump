@@ -11,6 +11,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class GameController {
+
 	@FXML private Button helloButton;
 	@FXML private AnchorPane base;
 	@FXML private ImageView takoImage;

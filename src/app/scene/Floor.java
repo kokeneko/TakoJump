@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Floor {
+
 	private String type; // ブロックの種類
 	private static final String FLOOR_NORMAL = "./images/floor_normal.png";
 	private Group group = new Group(); // 床をグループ化する
