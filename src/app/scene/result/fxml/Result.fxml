@@ -15,13 +15,13 @@
          </font>
       </Label>
       <Label fx:id="newRecordLabel" layoutX="150.0" layoutY="95.0" text="new record!!" textFill="RED" />
-      <Label fx:id="score" layoutX="150.0" layoutY="122.0" text="999999">
+      <Label fx:id="scoreLabel" layoutX="150.0" layoutY="122.0" text="999999">
          <font>
             <Font size="31.0" />
          </font>
       </Label>
       <Label layoutX="168.0" layoutY="200.0" text="ハイスコア" />
-      <Label fx:id="highScore" layoutX="171.0" layoutY="227.0" text="999999" />
+      <Label fx:id="highScoreLabel" layoutX="171.0" layoutY="227.0" text="999999" />
       <Label fx:id="restartLabel" layoutX="171.0" layoutY="306.0" onMouseClicked="#restartGame" text="もう一度" />
       <Label fx:id="toTitleLabel" layoutX="167.0" layoutY="340.0" onMouseClicked="#backToTitle" text="タイトルへ" />
       <Polygon fx:id="cursorPolygon" layoutX="126.0" layoutY="330.0" rotate="90.0" scaleX="0.2" scaleY="0.2" stroke="BLACK" strokeType="INSIDE">

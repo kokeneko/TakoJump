@@ -10,7 +10,7 @@ import javafx.scene.shape.Polygon;
 
 public class ResultController {
 	@FXML private Label newRecordLabel;
-	@FXML private Label score, highScore;
+	@FXML private Label scoreLabel, highScoreLabel;
 	@FXML private Label restartLabel, toTitleLabel;
 	@FXML private Polygon cursorPolygon;
 
@@ -27,6 +27,10 @@ public class ResultController {
 		resultOptionsPath = new ArrayList<>();
 		resultOptionsPath.add(SceneManager.GAME_PATH);
 		resultOptionsPath.add(SceneManager.TITLE_PATH);
+
+		// スコアは仮に1000で固定
+		setScore(1000);
+
 	}
 
 	@FXML
@@ -39,6 +43,10 @@ public class ResultController {
 	private void backToTitle() {
 		SceneManager sceneManager = new SceneManager();
 		sceneManager.transitionTo(SceneManager.TITLE_PATH);
+	}
+
+	private void setScore(int score) {
+		scoreLabel.setText(score + "");
 	}
 
 }
