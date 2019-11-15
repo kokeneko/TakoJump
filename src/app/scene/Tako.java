@@ -61,10 +61,10 @@ public class Tako {
 		duration = Duration.millis(500);
 		KeyFrame keyFrame = new KeyFrame(duration, (ActionEvent) ->  {
 			if ( collideObject(takoImage, waveRectangle) ) {
-				System.out.println("game-over");
 				timer.stop();
 				// ゲームオーバーの演出
-				// 仮置きで波加速
+				// 仮置きでコンソール表示と波加速
+				System.out.println("game-over");
 				wave.waveStart(0.1);
 			}
 		});
