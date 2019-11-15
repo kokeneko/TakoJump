@@ -34,6 +34,7 @@ public class ResultController {
 
 		// スコアは仮に1000で固定
 		setScore(1000);
+		setHighScore();
 	}
 
 	@FXML
@@ -51,6 +52,10 @@ public class ResultController {
 	private void setScore(int score) {
 		scoreLabel.setText(score + "");
 		databaseManager.writeData(score);
+	}
+
+	private void setHighScore() {
+		highScoreLabel.setText(databaseManager.getData().get(0) + "");
 	}
 
 }
