@@ -3,8 +3,8 @@ package app.scene.result.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.database.DatabaseManager;
 import app.scene.SceneManager;
+import app.scene.result.ResultScoreManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Polygon;
@@ -20,9 +20,6 @@ public class ResultController {
 	public static List<Label> resultOptionsLabel;
 	public static List<String> resultOptionsPath;
 
-	// データベース読み書き用
-	private DatabaseManager databaseManager = new DatabaseManager();
-
 	@FXML
 	private void initialize() {
 		resultOptionsLabel = new ArrayList<>();
@@ -34,11 +31,7 @@ public class ResultController {
 
 		// スコアは仮に適当な値を入れてます
 		// 確認するときは勝手に値を入れてね
-		// この変数は後で消します
-		int tmpScore = 10000;
-		showNewRecordLabel(tmpScore);
-		setScore(tmpScore);
-		setHighScore();
+		ResultScoreManager rsm = new ResultScoreManager(scoreLabel, highScoreLabel, newRecordLabel, 1000);
 	}
 
 	@FXML
@@ -51,24 +44,6 @@ public class ResultController {
 	private void backToTitle() {
 		SceneManager sceneManager = new SceneManager();
 		sceneManager.transitionTo(SceneManager.TITLE_PATH);
-	}
-
-	private void setScore(int score) {
-		scoreLabel.setText(score + "");
-		databaseManager.writeData(score);
-	}
-
-	private void setHighScore() {
-		highScoreLabel.setText(databaseManager.getData().get(0) + "");
-	}
-
-	private void showNewRecordLabel(int score) {
-		if (score > databaseManager.getData().get(0)) {
-			newRecordLabel.setVisible(true);
-		}
-		else {
-			newRecordLabel.setVisible(false);
-		}
 	}
 
 }
