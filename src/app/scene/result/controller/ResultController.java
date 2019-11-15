@@ -3,6 +3,7 @@ package app.scene.result.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.database.DatabaseManager;
 import app.scene.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -19,6 +20,9 @@ public class ResultController {
 	public static List<Label> resultOptionsLabel;
 	public static List<String> resultOptionsPath;
 
+	// データベース読み書き用
+	private DatabaseManager databaseManager = new DatabaseManager();
+
 	@FXML
 	private void initialize() {
 		resultOptionsLabel = new ArrayList<>();
@@ -30,7 +34,6 @@ public class ResultController {
 
 		// スコアは仮に1000で固定
 		setScore(1000);
-
 	}
 
 	@FXML
@@ -47,6 +50,7 @@ public class ResultController {
 
 	private void setScore(int score) {
 		scoreLabel.setText(score + "");
+		databaseManager.writeData(score);
 	}
 
 }
