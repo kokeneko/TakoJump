@@ -11,6 +11,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class GameController {
+
 	@FXML private Button helloButton;
 	@FXML private AnchorPane base;
 	@FXML private ImageView takoImage;
@@ -39,6 +40,7 @@ public class GameController {
 		switch(e.getCode()) {
 			case LEFT: tako.leftSlide(); break;
 			case RIGHT: tako.rightSlide(); break;
+			case DOWN: base = tako.jump(base); break;
 			default: break;
 		}
 	}
