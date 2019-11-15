@@ -26,11 +26,12 @@ public class Tako {
 		}
 	}
 
-	public AnchorPane jump(AnchorPane base) {
+	public AnchorPane jump(AnchorPane base, Wave wave) {
 		// base.getChildren().get(3)が一番下の床
 		Node floor = base.getChildren().get(3);
 		if (isAir) {
-			floor.setLayoutY(floor.getLayoutY() - 10);
+			floor.setLayoutY(floor.getLayoutY() + 10);
+			wave.waveDown(10);
 			// 床とタコの画像が被ったら床を動かなくする
 			if (collideObject(takoImage, floor)) {
 				floor.setLayoutY(floor.getLayoutY());
