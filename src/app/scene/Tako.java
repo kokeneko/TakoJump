@@ -27,8 +27,8 @@ public class Tako {
 	}
 
 	public AnchorPane jump(AnchorPane base) {
-		// base.getChildren().get(2)が一番下の床
-		Node floor = base.getChildren().get(2);
+		// base.getChildren().get(3)が一番下の床
+		Node floor = base.getChildren().get(3);
 		if (isAir) {
 			floor.setLayoutY(floor.getLayoutY() - 10);
 			// 床とタコの画像が被ったら床を動かなくする
