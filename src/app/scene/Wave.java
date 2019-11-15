@@ -21,11 +21,23 @@ public class Wave {
 			timer.stop();
 		}
 		KeyFrame keyFrame = new KeyFrame(waveDuration, (ActionEvent) ->  {
+			if ( wave.getLayoutY() <= 0 ) {
+				waveStop();
+			}
 			waveUp(10);
 		});
 		timer = new Timeline(keyFrame);
 		timer.setCycleCount(Timeline.INDEFINITE);
 		timer.play();
+	}
+
+	public void waveStop() {
+		System.out.println("ストップ");
+		if ( timer != null ) {
+			timer.stop();
+		}
+		SceneManager sceneManager = new SceneManager();
+		sceneManager.transitionTo(SceneManager.RESULT_PATH);
 	}
 
 	private void waveUp(int risingWidth) {
