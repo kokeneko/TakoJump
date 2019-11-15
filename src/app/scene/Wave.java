@@ -28,7 +28,7 @@ public class Wave {
 		timer.play();
 	}
 
-	public void waveUp(int risingWidth) {
+	private void waveUp(int risingWidth) {
 		wave.setLayoutY(wave.getLayoutY() - risingWidth);
 	}
 
