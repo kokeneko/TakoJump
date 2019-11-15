@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -14,5 +15,6 @@
             <Image url="@../../images/tako.png" />
          </image>
       </ImageView>
+      <fx:include source="GameChildWave.fxml" />
    </children>
 </AnchorPane>

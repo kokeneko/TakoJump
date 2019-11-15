@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.game.controller.WaveController">
+   <children>
+      <Rectangle fx:id="waveRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="400.0" layoutY="348.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0" />
+   </children>
+</AnchorPane>
