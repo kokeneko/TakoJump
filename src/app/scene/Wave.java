@@ -47,4 +47,8 @@ public class Wave {
 	public void waveDown(int downWidth) {
 		wave.setLayoutY(wave.getLayoutY() + downWidth);
 	}
+
+	public Rectangle getWaveRectangle() {
+		return wave;
+	}
 }

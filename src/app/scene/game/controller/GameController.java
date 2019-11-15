@@ -13,7 +13,6 @@ public class GameController {
 
 	@FXML private AnchorPane base;
 	@FXML private ImageView takoImage;
-	@FXML private WaveController waveController;
 
 	private Image image;
 	private Wave wave;
@@ -31,7 +30,10 @@ public class GameController {
 
 		//始めの床を生成し、paneに載せる
 		base.getChildren().add(floor.generate(image, 0, 300, 13));
+
+		tako.GameOver(takoImage, wave.getWaveRectangle(), wave);
 	}
+
 	private void keyPressedEvent(KeyEvent e, Tako tako, Wave wave) {
 		switch(e.getCode()) {
 			case LEFT: tako.leftSlide(); break;

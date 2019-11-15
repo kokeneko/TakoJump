@@ -1,13 +1,19 @@
 package app.scene;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 public class Tako {
 
 	private ImageView takoImage;
 	private boolean isAir; // 空中にいるかどうか
+	private Timeline timer;
+	private Duration duration;
 
 	public Tako(ImageView tako) {
 		this.takoImage = tako;
@@ -48,5 +54,21 @@ public class Tako {
 			return true;
 		}
 		return false;
+	}
+
+	public void GameOver(ImageView takoImage, Rectangle waveRectangle, Wave wave) {
+		duration = Duration.millis(100);
+		KeyFrame keyFrame = new KeyFrame(duration, (ActionEvent) ->  {
+			if ( collideObject(takoImage, waveRectangle) ) {
+				System.out.println("game-over");
+				timer.stop();
+				// ゲームオーバーの演出
+				// 仮置きで波加速
+				wave.waveStart(0.1);
+			}
+		});
+		timer = new Timeline(keyFrame);
+		timer.setCycleCount(Timeline.INDEFINITE);
+		timer.play();
 	}
 }
