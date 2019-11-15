@@ -4,7 +4,6 @@ import app.scene.Floor;
 import app.scene.Tako;
 import app.scene.Wave;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -12,9 +11,9 @@ import javafx.scene.layout.AnchorPane;
 
 public class GameController {
 
-	@FXML private Button helloButton;
 	@FXML private AnchorPane base;
 	@FXML private ImageView takoImage;
+	@FXML private WaveController waveController;
 
 	private Image image;
 	private Wave wave;
@@ -33,8 +32,6 @@ public class GameController {
 		//始めの床を生成し、paneに載せる
 		base.getChildren().add(floor.generate(image, 0, 300, 13));
 	}
-
-
 	private void keyPressedEvent(KeyEvent e, Tako tako, Wave wave) {
 		switch(e.getCode()) {
 			case LEFT: tako.leftSlide(); break;

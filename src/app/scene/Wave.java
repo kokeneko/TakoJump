@@ -21,7 +21,8 @@ public class Wave {
 			timer.stop();
 		}
 		KeyFrame keyFrame = new KeyFrame(waveDuration, (ActionEvent) ->  {
-			if ( wave.getLayoutY() <= 0) {
+			if ( wave.getLayoutY() <= 0 ) {
+
 				waveStop();
 			}
 			waveUp(10);

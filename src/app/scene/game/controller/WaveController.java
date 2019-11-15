@@ -8,7 +8,6 @@ public class WaveController {
 	@FXML private Rectangle waveRectangle;
 
 	private static Wave wave;
-
 	@FXML
 	private void initialize() {
 		wave = new Wave(waveRectangle);
