@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.scene.SceneManager;
+import app.scene.result.ResultScoreManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Polygon;
 
 public class ResultController {
 	@FXML private Label newRecordLabel;
-	@FXML private Label score, highScore;
+	@FXML private Label scoreLabel, highScoreLabel;
 	@FXML private Label restartLabel, toTitleLabel;
 	@FXML private Polygon cursorPolygon;
 
@@ -27,6 +28,10 @@ public class ResultController {
 		resultOptionsPath = new ArrayList<>();
 		resultOptionsPath.add(SceneManager.GAME_PATH);
 		resultOptionsPath.add(SceneManager.TITLE_PATH);
+
+		// スコアは仮に適当な値を入れてます
+		// 確認するときは勝手に値を入れてね
+		ResultScoreManager rsm = new ResultScoreManager(scoreLabel, highScoreLabel, newRecordLabel, 1000);
 	}
 
 	@FXML
