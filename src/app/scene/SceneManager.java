@@ -65,10 +65,10 @@ public class SceneManager {
 
 	private void keyPressedEvent(KeyEvent e, Cursor cursor) {
 		switch(e.getCode()) {
-		case UP: cursor.up(); break;
-		case DOWN: cursor.down(); break;
-		case ENTER: cursor.select(); break;
-		default: break;
+			case UP: cursor.up(); break;
+			case DOWN: cursor.down(); break;
+			case ENTER: cursor.select(); break;
+			default: break;
 		}
 	}
 

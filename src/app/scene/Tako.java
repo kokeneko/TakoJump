@@ -36,6 +36,7 @@ public class Tako {
 		// base.getChildren().get(3)が一番下の床
 		Node floor = base.getChildren().get(3);
 		if (isAir) {
+			// 床と波を下げる
 			floor.setLayoutY(floor.getLayoutY() + 10);
 			wave.waveDown(10);
 			// 床とタコの画像が被ったら床を動かなくする
@@ -57,7 +58,7 @@ public class Tako {
 	}
 
 	public void GameOver(ImageView takoImage, Rectangle waveRectangle, Wave wave) {
-		duration = Duration.millis(100);
+		duration = Duration.millis(500);
 		KeyFrame keyFrame = new KeyFrame(duration, (ActionEvent) ->  {
 			if ( collideObject(takoImage, waveRectangle) ) {
 				System.out.println("game-over");

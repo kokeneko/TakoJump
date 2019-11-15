@@ -19,5 +19,4 @@ public class WaveController {
 		System.out.println(wave);
 		return wave;
 	}
-
 }
