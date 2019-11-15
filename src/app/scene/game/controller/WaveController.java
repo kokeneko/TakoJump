@@ -16,7 +16,6 @@ public class WaveController {
 	}
 
 	public Wave getWave() {
-		System.out.println(wave);
 		return wave;
 	}
 }
