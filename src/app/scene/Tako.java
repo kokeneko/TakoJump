@@ -39,7 +39,7 @@ public class Tako {
 		if (isAir) {
 			floor.setLayoutY(floor.getLayoutY() + 10);
 			backScreen.downScreen(5);
-      wave.waveDown(10);
+			wave.waveDown(10);
 			// 床とタコの画像が被ったら床を動かなくする
 			if (collideObject(takoImage, floor)) {
 				floor.setLayoutY(floor.getLayoutY());
