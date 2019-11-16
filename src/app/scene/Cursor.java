@@ -11,6 +11,8 @@ public class Cursor {
 	private List<String> optionList;
 	private int selectedOptionNumber = 0;
 
+	private final double HEIGHT_GAP = 25.0;
+
 	private SceneManager sceneManager = new SceneManager();
 
 	public Cursor(Node cursor, List<Label> titleOptionsLabel, List<String> titleOptionsPath) {
@@ -27,7 +29,7 @@ public class Cursor {
 		else {
 			selectedOptionNumber = labelList.size() - 1;
 		}
-		cursor.setLayoutY(labelList.get(selectedOptionNumber).getLayoutY() + 18);
+		cursor.setLayoutY(labelList.get(selectedOptionNumber).getLayoutY() + HEIGHT_GAP);
 	}
 
 	public void down() {
@@ -37,7 +39,7 @@ public class Cursor {
 		else {
 			selectedOptionNumber = 0;
 		}
-		cursor.setLayoutY(labelList.get(selectedOptionNumber).getLayoutY() + 18);
+		cursor.setLayoutY(labelList.get(selectedOptionNumber).getLayoutY() + HEIGHT_GAP);
 	}
 
 	public void select() {
