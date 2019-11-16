@@ -1,5 +1,6 @@
 package app.scene.game.controller;
 
+import app.scene.BackScreen;
 import app.scene.Floor;
 import app.scene.SceneManager;
 import app.scene.Tako;
@@ -14,6 +15,7 @@ public class GameController {
 
 	@FXML private Button helloButton;
 	@FXML private AnchorPane base;
+	@FXML private AnchorPane backScreenBase;
 	@FXML private ImageView takoImage;
 
 	private Image image;
@@ -22,9 +24,9 @@ public class GameController {
 	private void initialize() {
 		Floor floor = new Floor();
 		image = floor.assignImage("normal");
-
 		Tako tako = new Tako(takoImage);
-		base.setOnKeyPressed(e -> keyPressedEvent(e, tako));
+		BackScreen backScreen = new BackScreen(backScreenBase);
+		base.setOnKeyPressed(e -> keyPressedEvent(e, tako, backScreen));
 
 		//始めの床を生成し、paneに載せる
 		base.getChildren().add(floor.generate(image, 0, 300, 13));
@@ -36,11 +38,11 @@ public class GameController {
 		sceneManager.transitionTo(SceneManager.RESULT_PATH);
 	}
 
-	private void keyPressedEvent(KeyEvent e, Tako tako) {
+	private void keyPressedEvent(KeyEvent e, Tako tako, BackScreen backScreen) {
 		switch(e.getCode()) {
 			case LEFT: tako.leftSlide(); break;
 			case RIGHT: tako.rightSlide(); break;
-			case DOWN: base = tako.jump(base); break;
+			case DOWN: base = tako.jump(base, backScreen); break;
 			default: break;
 		}
 	}

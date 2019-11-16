@@ -11,5 +11,6 @@ public class GameBackScreenController {
 	@FXML
 	private void initialize() {
 		BackScreen backScreen = new BackScreen(backScreenBase);
+		backScreen.changeScreen((AnchorPane)backScreenBase.getChildren().get(1));
 	}
 }

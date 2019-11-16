@@ -10,21 +10,21 @@ public class BackScreen {
 	public BackScreen(AnchorPane backScreenBase) {
 		this.backScreen1 = (AnchorPane) backScreenBase.getChildren().get(0);
 		this.backScreen2 = (AnchorPane) backScreenBase.getChildren().get(1);
-		changeScreen(backScreen2);
 	}
 
-	public void downBackScreen(double downSpeed) {
-		backScreen1.setTranslateY(backScreen1.getLayoutY() + downSpeed);
-		backScreen2.setTranslateY(backScreen2.getLayoutY() + downSpeed);
-		if (backScreen1.getTranslateY() == 0) {
+	public void downScreen(double downSpeed) {
+		backScreen1.setTranslateY(backScreen1.getTranslateY() + downSpeed);
+		backScreen2.setTranslateY(backScreen2.getTranslateY() + downSpeed);
+
+		if (Double.compare(backScreen1.getTranslateY(), 0.0) == 0) {
 			changeScreen(backScreen2);
 		}
-		if (backScreen2.getTranslateY() == 0) {
+		if (Double.compare(backScreen2.getTranslateY(), 0.0) == 0) {
 			changeScreen(backScreen1);
 		}
 	}
 
-	private void changeScreen(AnchorPane backScreen) {
+	public void changeScreen(AnchorPane backScreen) {
 		backScreen.setTranslateY(-backScreen.getPrefHeight());
 	}
 

@@ -1,6 +1,5 @@
 package app.scene;
 
-import app.scene.game.controller.GameBackScreenController;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -9,7 +8,6 @@ public class Tako {
 
 	private ImageView takoImage;
 	private boolean isAir; // 空中にいるかどうか
-
 
 	public Tako(ImageView tako) {
 		this.takoImage = tako;
@@ -28,16 +26,16 @@ public class Tako {
 		}
 	}
 
-	public AnchorPane jump(AnchorPane base) {
+	public AnchorPane jump(AnchorPane base, BackScreen backScreen) {
 		// base.getChildren().get(4)が一番下の床
 		Node floor = base.getChildren().get(4);
 
 		if (isAir) {
 			floor.setLayoutY(floor.getLayoutY() - 10);
+			backScreen.downScreen(5);
 			// 床とタコの画像が被ったら床を動かなくする
 			if (collideObject(takoImage, floor)) {
 				floor.setLayoutY(floor.getLayoutY());
-				isAir = false;
 			}
 		}
 		return base;
