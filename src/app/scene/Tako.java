@@ -1,13 +1,19 @@
 package app.scene;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 public class Tako {
 
 	private ImageView takoImage;
 	private boolean isAir; // 空中にいるかどうか
+	private Timeline timer;
+	private Duration duration;
 
 	public Tako(ImageView tako) {
 		this.takoImage = tako;
@@ -26,13 +32,14 @@ public class Tako {
 		}
 	}
 
-	public AnchorPane jump(AnchorPane base, BackScreen backScreen) {
+	public AnchorPane jump(AnchorPane base, BackScreen backScreen, Wave wave) {
 		// base.getChildren().get(4)が一番下の床
 		Node floor = base.getChildren().get(4);
 
 		if (isAir) {
-			floor.setLayoutY(floor.getLayoutY() - 10);
+			floor.setLayoutY(floor.getLayoutY() + 10);
 			backScreen.downScreen(5);
+      wave.waveDown(10);
 			// 床とタコの画像が被ったら床を動かなくする
 			if (collideObject(takoImage, floor)) {
 				floor.setLayoutY(floor.getLayoutY());
@@ -48,5 +55,21 @@ public class Tako {
 			return true;
 		}
 		return false;
+	}
+
+	public void GameOver(ImageView takoImage, Rectangle waveRectangle, Wave wave) {
+		duration = Duration.millis(500);
+		KeyFrame keyFrame = new KeyFrame(duration, (ActionEvent) ->  {
+			if ( collideObject(takoImage, waveRectangle) ) {
+				timer.stop();
+				// ゲームオーバーの演出
+				// 仮置きでコンソール表示と波加速
+				System.out.println("game-over");
+				wave.waveStart(0.1);
+			}
+		});
+		timer = new Timeline(keyFrame);
+		timer.setCycleCount(Timeline.INDEFINITE);
+		timer.play();
 	}
 }

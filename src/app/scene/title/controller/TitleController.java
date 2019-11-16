@@ -3,10 +3,12 @@ package app.scene.title.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.font.FontManager;
 import app.scene.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Polygon;
+import javafx.scene.text.Font;
 
 public class TitleController {
 	@FXML private Label titleLogo;
@@ -28,6 +30,11 @@ public class TitleController {
 		titleOptionsPath = new ArrayList<>();
 		titleOptionsPath.add(SceneManager.GAME_PATH);
 		titleOptionsPath.add(SceneManager.RANKING_PATH);
+
+		FontManager fontManager = new FontManager();
+		Font font = fontManager.getFont();
+		startLabel.setFont(font);
+		rankingLabel.setFont(font);
 	}
 
 	@FXML
