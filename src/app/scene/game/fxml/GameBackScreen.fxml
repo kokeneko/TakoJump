@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.game.controller.BackScreenController">
+<AnchorPane fx:id="backScreenBase" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.game.controller.GameBackScreenController">
    <children>
-         <AnchorPane id="backGround2" prefHeight="600.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane id="backScreen1" fx:id="backScreen1" prefHeight="600.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Circle fill="DODGERBLUE" layoutX="51.0" layoutY="80.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="DODGERBLUE" layoutX="200.0" layoutY="78.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fill="DODGERBLUE" layoutX="340.0" layoutY="441.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
          </children></AnchorPane>
+      <AnchorPane id="backScreen2" fx:id="backScreen2" layoutY="-600.0" prefHeight="600.0" prefWidth="400.0">
+         <children>
+            <Polygon fill="#ff1f1f" layoutX="123.0" layoutY="196.0" mouseTransparent="true" scaleX="0.5" scaleY="0.5" scaleZ="0.5" stroke="BLACK" strokeType="INSIDE">
+              <points>
+                <Double fx:value="-50.0" />
+                <Double fx:value="40.0" />
+                <Double fx:value="50.0" />
+                <Double fx:value="40.0" />
+                <Double fx:value="0.0" />
+                <Double fx:value="-60.0" />
+              </points>
+            </Polygon>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
