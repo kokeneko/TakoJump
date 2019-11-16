@@ -16,6 +16,6 @@
             <Image url="@../../images/tako.png" />
          </image>
       </ImageView>
-      <fx:include fx:id="base2" source="GameChildWave.fxml" />
+      <fx:include source="GameChildWave.fxml" />
    </children>
 </AnchorPane>
