@@ -27,7 +27,7 @@ public class GameController {
 		Floor floor = new Floor();
 		image = floor.assignImage("normal");
 		Tako tako = new Tako(takoImage);
-    
+
 		BackScreen backScreen = new BackScreen(backScreenBase);
 		base.setOnKeyPressed(e -> keyPressedEvent(e, tako, backScreen, wave));
 
