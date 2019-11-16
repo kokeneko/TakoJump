@@ -32,17 +32,17 @@ public class Tako {
 		}
 	}
 
-	public AnchorPane jump(AnchorPane base, Wave wave) {
-		// base.getChildren().get(3)が一番下の床
-		Node floor = base.getChildren().get(3);
+	public AnchorPane jump(AnchorPane base, BackScreen backScreen, Wave wave) {
+		// base.getChildren().get(4)が一番下の床
+		Node floor = base.getChildren().get(4);
+
 		if (isAir) {
-			// 床と波を下げる
 			floor.setLayoutY(floor.getLayoutY() + 10);
+			backScreen.downScreen(5);
 			wave.waveDown(10);
 			// 床とタコの画像が被ったら床を動かなくする
 			if (collideObject(takoImage, floor)) {
 				floor.setLayoutY(floor.getLayoutY());
-				isAir = false;
 			}
 		}
 		return base;
