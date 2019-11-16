@@ -6,11 +6,16 @@ import javafx.scene.shape.Rectangle;
 
 public class WaveController {
 	@FXML private Rectangle waveRectangle;
-	private Wave wave;
+
+	private static Wave wave;
 
 	@FXML
 	private void initialize() {
 		wave = new Wave(waveRectangle);
-		wave.waveStart(3);
+		wave.waveStart(1);
+	}
+
+	public Wave getWave() {
+		return wave;
 	}
 }
