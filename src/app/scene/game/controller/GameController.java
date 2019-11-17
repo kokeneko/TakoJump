@@ -26,6 +26,10 @@ public class GameController {
 
 		Floor floor = new Floor();
 		image = floor.assignImage("normal");
+		// 初期配置の床2個目
+		Floor floor2 = new Floor();
+		image = floor2.assignImage("normal");
+
 		Tako tako = new Tako(takoImage);
 
 		BackScreen backScreen = new BackScreen(backScreenBase);
@@ -33,6 +37,8 @@ public class GameController {
 
 		//始めの床を生成し、paneに載せる
 		base.getChildren().add(floor.generate(image, 0, 300, 13));
+		//ここの二個目の床に関しては今は固定してる、固定じゃダメですか？
+		base.getChildren().add(floor2.generate(image, 20, 200, 5));
 
 		tako.GameOver(takoImage, wave.getWaveRectangle(), wave);
 	}
@@ -41,7 +47,7 @@ public class GameController {
 		switch(e.getCode()) {
 			case LEFT: tako.leftSlide(); break;
 			case RIGHT: tako.rightSlide(); break;
-			case DOWN: base = tako.jump(base, backScreen, wave); break;
+			case DOWN: if ( !tako.getIsAir() ) { tako.jump(base, backScreen, wave); } break;
 			default: break;
 		}
 	}

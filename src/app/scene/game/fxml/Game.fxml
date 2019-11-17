@@ -11,7 +11,7 @@
    <children>
       <fx:include fx:id="backScreenBase" source="GameBackScreen.fxml" />
       <Button layoutX="161.0" layoutY="181.0" mnemonicParsing="false" text="ゲーム画面だよ" />
-      <ImageView fx:id="takoImage" fitHeight="32.0" fitWidth="32.0" layoutX="200.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="takoImage" fitHeight="32.0" fitWidth="32.0" layoutX="200.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/tako.png" />
          </image>
