@@ -12,7 +12,7 @@ public class WaveController {
 	@FXML
 	private void initialize() {
 		wave = new Wave(waveRectangle);
-		wave.waveStart(1);
+		wave.waveStart(3);
 	}
 
 	public Wave getWave() {

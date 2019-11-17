@@ -13,8 +13,20 @@ public class BackScreen {
 	}
 
 	public void downScreen(double downSpeed) {
-		backScreen1.setTranslateY(backScreen1.getTranslateY() + downSpeed);
-		backScreen2.setTranslateY(backScreen2.getTranslateY() + downSpeed);
+		backScreen1.setTranslateY(downSpeed);
+		backScreen2.setLayoutY(downSpeed);
+
+		if (Double.compare(backScreen1.getTranslateY(), 0.0) == 0) {
+			changeScreen(backScreen2);
+		}
+		if (Double.compare(backScreen2.getTranslateY(), 0.0) == 0) {
+			changeScreen(backScreen1);
+		}
+	}
+
+	public void upScreen(double upSpeed) {
+		backScreen1.setTranslateY(backScreen1.getTranslateY() - upSpeed);
+		backScreen2.setTranslateY(backScreen2.getTranslateY() - upSpeed);
 
 		if (Double.compare(backScreen1.getTranslateY(), 0.0) == 0) {
 			changeScreen(backScreen2);

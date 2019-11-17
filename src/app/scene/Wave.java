@@ -39,12 +39,12 @@ public class Wave {
 		sceneManager.transitionTo(SceneManager.RESULT_PATH);
 	}
 
-	private void waveUp(int risingWidth) {
+	public void waveUp(double risingWidth) {
 		wave.setLayoutY(wave.getLayoutY() - risingWidth);
 	}
 
-	public void waveDown(int downWidth) {
-		wave.setLayoutY(wave.getLayoutY() + downWidth);
+	public void waveDown(double downWidth) {
+		wave.setTranslateY(downWidth);
 	}
 
 	public Rectangle getWaveRectangle() {
