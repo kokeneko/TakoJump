@@ -15,7 +15,7 @@ public class Tako {
 
 	private ImageView takoImage;
 	private static boolean isAir; // 空中にいるかどうか
-	private Timeline timer;
+	private Timeline timeline;
 	private Duration duration;
 	private Floor newFloor = new Floor();
 
@@ -103,19 +103,25 @@ public class Tako {
 	}
 
 	public void GameOver(ImageView takoImage, Rectangle waveRectangle, Wave wave) {
+		Timer timer = new Timer();
 		duration = Duration.millis(500);
 		KeyFrame keyFrame = new KeyFrame(duration, (ActionEvent) ->  {
 			if ( collideObject(takoImage, waveRectangle) ) {
-				timer.stop();
+				// 内部タイマーの停止
+				timer.timerStop();
+
+				// ゲームオーバー判定のtimelineストップ
+				timeline.stop();
+
 				// ゲームオーバーの演出
 				// 仮置きでコンソール表示と波加速
 				// System.out.println("game-over");
 				wave.waveStart(0.05);
 			}
 		});
-		timer = new Timeline(keyFrame);
-		timer.setCycleCount(Timeline.INDEFINITE);
-		timer.play();
+		timeline = new Timeline(keyFrame);
+		timeline.setCycleCount(Timeline.INDEFINITE);
+		timeline.play();
 	}
 
 	public boolean getIsAir() {
