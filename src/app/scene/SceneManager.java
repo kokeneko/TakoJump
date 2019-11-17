@@ -54,6 +54,9 @@ public class SceneManager {
 				Cursor cursor = new Cursor(root.getChildren().get(7), ResultController.resultOptionsLabel, ResultController.resultOptionsPath);
 				scene.setOnKeyPressed(e -> keyPressedEvent(e, cursor));
 			}
+			else if (path.equals(RANKING_PATH)) {
+				scene.setOnKeyPressed(e -> transitionTo(TITLE_PATH));
+			}
 			else {
 				scene.setOnKeyPressed(null);
 			}

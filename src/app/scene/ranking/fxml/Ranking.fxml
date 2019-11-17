@@ -6,10 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import java.util.ArrayList?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #001E43;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.ranking.controller.RankingController">
+<AnchorPane fx:id="base" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #001E43;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.ranking.controller.RankingController">
    <children>
       <Label fx:id="rankingLabel" layoutX="140.0" layoutY="23.0" text="ランキング" textFill="WHITE" />
-      <VBox layoutX="101.0" layoutY="90.0" prefHeight="310.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+      <Label fx:id="transitionLabel" layoutX="50.0" layoutY="370.0" text="←press ANY KEY to return" textFill="WHITE" />
+      <VBox layoutX="101.0" layoutY="90.0" prefHeight="310.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
          <children>
             <Label fx:id="rank1" textFill="WHITE" />
             <Label fx:id="rank2" textFill="WHITE" />

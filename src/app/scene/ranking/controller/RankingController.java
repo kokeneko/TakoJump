@@ -6,10 +6,12 @@ import app.database.DatabaseManager;
 import app.font.FontManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 
 public class RankingController {
-	@FXML private Label rankingLabel;
+	@FXML private AnchorPane base;
+	@FXML private Label rankingLabel, transitionLabel;
 	@FXML private List<Label> rankList;
 
 	private List<Integer> dataList;
@@ -28,10 +30,10 @@ public class RankingController {
 		FontManager fontManager = new FontManager();
 		Font font = fontManager.getFont();
 		rankingLabel.setFont(font);
+		transitionLabel.setFont(font);
 		for (Label rank : rankList) {
 			rank.setFont(font);
 		}
-
 	}
 
 }
