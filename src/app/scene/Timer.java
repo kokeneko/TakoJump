@@ -9,7 +9,7 @@ public class Timer {
 
 	private static Timeline timer;
 	private Duration duration;
-	private static int time;
+	public static int time;
 
 	public void timerStart() {
 		time = 0;
@@ -43,9 +43,5 @@ public class Timer {
 		if ( timer != null ) {
 			timer.stop();
 		}
-	}
-
-	public int getTime() {
-		return time;
 	}
 }

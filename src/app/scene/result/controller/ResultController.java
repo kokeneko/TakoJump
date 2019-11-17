@@ -34,11 +34,9 @@ public class ResultController {
 		resultOptionsPath.add(SceneManager.GAME_PATH);
 		resultOptionsPath.add(SceneManager.TITLE_PATH);
 
-		Timer timer = new Timer();
-
 		// スコアは仮に適当な値を入れてます
 		// 確認するときは勝手に値を入れてね
-		ResultScoreManager rsm = new ResultScoreManager(scoreLabel, highScoreLabel, newRecordLabel, timer.getTime());
+		ResultScoreManager rsm = new ResultScoreManager(scoreLabel, highScoreLabel, newRecordLabel, Timer.time);
 
 		FontManager fontManager = new FontManager();
 		gameoverLabel.setFont(fontManager.getFont(50));
