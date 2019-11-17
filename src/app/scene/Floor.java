@@ -22,8 +22,6 @@ public class Floor {
 	private final String FLOOR_ROLL_PATH = "./images/floorRoll.png";
 	private final String FLOOR_SLIDE_PATH = "./images/floorSlide.png";
 
-	private Group group = new Group(); // 床をグループ化する
-
 	// 画像をtype毎に代入する
 	private Image assignImage(String type) {
 		HashMap<String, String> hashmap = new HashMap<String, String>();
@@ -42,6 +40,7 @@ public class Floor {
 
 	// 床を座標(x, y)にblocks 分生成する
 	public Group generate(String type, double x, double y, int blocks) {
+		Group group = new Group();
 		Image image = assignImage(type);
 		// blocks分
 		double width = image.getWidth();
@@ -82,15 +81,15 @@ public class Floor {
 	// 種類をランダムに設定
 	public String randType() {
 		Random rand = new Random();
-		int randomValue = rand.nextInt(4);
-		if (randomValue == 0) {
-			return FLOOR_NORMAL;
-		} else if (randomValue == 1) {
-			return FLOOR_ICE;
-		} else if (randomValue == 2) {
-			return FLOOR_ROLL;
-		} else {
-			return FLOOR_SLIDE;
+		switch (rand.nextInt(4)) {
+		case 0: return FLOOR_NORMAL;
+		case 1: return FLOOR_ICE;
+		case 2: return FLOOR_ROLL;
+		case 3: return FLOOR_SLIDE;
+		default: break;
 		}
+
+		return FLOOR_NORMAL;
 	}
+
 }
