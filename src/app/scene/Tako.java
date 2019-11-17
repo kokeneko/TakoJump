@@ -26,12 +26,18 @@ public class Tako {
 
 	public void leftSlide() {
 		if (isAir) {
+			if ( takoImage.getLayoutX() <= 0 ) {
+				takoImage.setLayoutX(takoImage.getLayoutX() + 400);
+			}
 			takoImage.setLayoutX(takoImage.getLayoutX() - 10);
 		}
 	}
 
 	public void rightSlide() {
 		if (isAir) {
+			if ( takoImage.getLayoutX() >= 400 ) {
+				takoImage.setLayoutX(takoImage.getLayoutX() - 400 );
+			}
 			takoImage.setLayoutX(takoImage.getLayoutX() + 10);
 		}
 	}
