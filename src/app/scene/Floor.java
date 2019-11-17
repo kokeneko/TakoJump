@@ -87,7 +87,7 @@ public class Floor {
 		}
 		return blocks;
 	}
-
+	//種類をランダムに設定
 	public String randType() {
 		Random rand = new Random();
 		int randomValue = rand.nextInt(3);
