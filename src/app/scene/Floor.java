@@ -1,6 +1,7 @@
 package app.scene;
 
 import java.net.URISyntaxException;
+import java.util.HashMap;
 import java.util.Random;
 
 import javafx.scene.Group;
@@ -13,41 +14,23 @@ public class Floor {
 	private static final String FLOOR_NORMAL = "./images/floorNormal.png";
 	private static final String FLOOR_ICE = "./images/floorIce.png";
 	private static final String FLOOR_ROLL = "./images/floorRoll.png";
-	private static final String FLOOR_Slide = "./images/floorSlide.png";
+	private static final String FLOOR_SLIDE = "./images/floorSlide.png";
 
 	private Group group = new Group(); // 床をグループ化する
 
 	// 画像をtype毎に代入する
 	public Image assignImage(String type) {
-		if (type.equals("normal")) {
-			try {
-				this.type = getClass().getResource(FLOOR_NORMAL).toURI().toString();
-			} catch (URISyntaxException e) {
-				e.printStackTrace();
-			}
-		}
-		if (type.equals("ice")) {
-			try {
-				this.type = getClass().getResource(FLOOR_ICE).toURI().toString();
-			} catch (URISyntaxException e) {
-				e.printStackTrace();
-			}
-		}
-		if (type.equals("roll")) {
-			try {
-				this.type = getClass().getResource(FLOOR_ROLL).toURI().toString();
-			} catch (URISyntaxException e) {
-				e.printStackTrace();
-			}
-		}
-		if (type.equals("slide")) {
-			try {
-				this.type = getClass().getResource(FLOOR_Slide).toURI().toString();
-			} catch (URISyntaxException e) {
-				e.printStackTrace();
-			}
-		}
+		HashMap<String, String> hashmap = new HashMap<String, String>();
+		hashmap.put("normal", FLOOR_NORMAL);
+		hashmap.put("ice", FLOOR_ICE);
+		hashmap.put("roll", FLOOR_ROLL);
+		hashmap.put("slide", FLOOR_SLIDE);
 
+		try {
+			this.type = getClass().getResource(hashmap.get(type)).toURI().toString();
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
 		return new Image(this.type);
 	}
 
@@ -65,6 +48,7 @@ public class Floor {
 		}
 		return group;
 	}
+
 //画面サイズからブロック分を引く
 	public int randX(int score) {
 		Random rand = new Random();
@@ -87,7 +71,8 @@ public class Floor {
 		}
 		return blocks;
 	}
-	//種類をランダムに設定
+
+	// 種類をランダムに設定
 	public String randType() {
 		Random rand = new Random();
 		int randomValue = rand.nextInt(4);
