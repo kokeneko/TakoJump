@@ -10,10 +10,10 @@
 <AnchorPane prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #001E43;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.result.controller.ResultController">
    <children>
       <Label fx:id="gameoverLabel" layoutX="90.0" layoutY="30.0" text="GAME OVER" textFill="WHITE" />
-      <Label fx:id="newRecordLabel" layoutX="145.0" layoutY="95.0" text="new record!!" textFill="RED" visible="false" />
-      <Label fx:id="scoreLabel" layoutX="150.0" layoutY="122.0" text="999999" textFill="WHITE" />
-      <Label fx:id="highScoreTextLabel" layoutX="140.0" layoutY="200.0" text="ハイスコア" textFill="WHITE" />
-      <Label fx:id="highScoreLabel" layoutX="150.0" layoutY="227.0" text="999999" textFill="WHITE" />
+      <Label fx:id="newRecordLabel" layoutX="145.0" layoutY="105.0" text="new record!!" textFill="RED" visible="false" />
+      <Label fx:id="scoreLabel" layoutX="150.0" layoutY="132.0" text="999999" textFill="WHITE" />
+      <Label fx:id="highScoreTextLabel" layoutX="140.0" layoutY="210.0" text="ハイスコア" textFill="WHITE" />
+      <Label fx:id="highScoreLabel" layoutX="150.0" layoutY="237.0" text="999999" textFill="WHITE" />
       <Label fx:id="restartLabel" layoutX="150.0" layoutY="300.0" onMouseClicked="#restartGame" text="もう一度" textFill="WHITE" />
       <Label fx:id="toTitleLabel" layoutX="140.0" layoutY="340.0" onMouseClicked="#backToTitle" text="タイトルへ" textFill="WHITE" />
       <Polygon fx:id="cursorPolygon" fill="WHITE" layoutX="110.0" layoutY="325.0" rotate="90.0" scaleX="0.2" scaleY="0.2" stroke="BLACK" strokeType="INSIDE">
