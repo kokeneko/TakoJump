@@ -74,7 +74,6 @@ public class Tako {
 					floor.setLayoutY(y);
 
 					if ( time > 0.5 && collideObject(takoImage, floor) ) {
-						System.out.println("地面にいる");
 						isAir = false;
 						jumpTimer.stop();
 					}
