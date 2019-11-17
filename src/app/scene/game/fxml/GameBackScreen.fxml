@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
@@ -10,51 +11,455 @@
    <children>
          <AnchorPane id="backScreen1" prefHeight="600.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Circle fill="DODGERBLUE" layoutX="200.0" layoutY="78.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="DODGERBLUE" layoutX="340.0" layoutY="441.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="DODGERBLUE" layoutX="68.0" layoutY="549.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="DODGERBLUE" layoutX="143.0" layoutY="234.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon fill="#f8e5e0" layoutX="56.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE">
+              <points>
+                <Double fx:value="0.0" />
+                <Double fx:value="15.0" />
+                <Double fx:value="15.0" />
+                <Double fx:value="0.0" />
+                <Double fx:value="30.0" />
+                <Double fx:value="15.0" />
+                <Double fx:value="15.0" />
+                <Double fx:value="30.0" />
+              </points>
+            </Polygon>
+            <Polygon fill="#eff4f8" layoutX="335.0" layoutY="342.0" stroke="BLACK" strokeType="INSIDE">
+              <points>
+                <Double fx:value="0.0" />
+                <Double fx:value="15.0" />
+                <Double fx:value="10.0" />
+                <Double fx:value="20.0" />
+                <Double fx:value="15.0" />
+                <Double fx:value="30.0" />
+                <Double fx:value="20.0" />
+                <Double fx:value="20.0" />
+                <Double fx:value="30.0" />
+                <Double fx:value="15.0" />
+                <Double fx:value="20.0" />
+                <Double fx:value="10.0" />
+                <Double fx:value="15.0" />
+                <Double fx:value="0.0" />
+                <Double fx:value="10.0" />
+                <Double fx:value="10.0" />
+              </points>
+            </Polygon>
+            <Polygon fill="#feffd9" layoutX="71.0" layoutY="263.0" scaleX="1.5" scaleY="1.5" scaleZ="1.5" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#cbe7ff" layoutX="320.0" layoutY="138.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+               <effect>
+                  <Glow level="0.52" />
+               </effect>
+            </Polygon>
+            <Polygon fill="#e9f3fc" layoutX="200.0" layoutY="357.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Polygon>
+            <Polygon fill="#fce0e2" layoutX="94.0" layoutY="522.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="10.0" />
+               </points>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Polygon>
+            <Polygon fill="#fdffde" layoutX="335.0" layoutY="537.0" stroke="WHITE" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="10.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#e9f3fc" layoutX="62.0" layoutY="462.0" scaleX="0.7" scaleY="0.7" scaleZ="0.7" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#eff4f8" layoutX="283.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="10.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#cbe7ff" layoutX="161.0" layoutY="168.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <Glow level="0.52" />
+               </effect>
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#eff4f8" layoutX="260.0" layoutY="263.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="10.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#e9f3fc" layoutX="176.0" layoutY="488.0" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#cbe7ff" layoutX="191.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <Glow level="0.52" />
+               </effect>
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+            </Polygon>
          </children></AnchorPane>
       <AnchorPane id="backScreen2" prefHeight="600.0" prefWidth="400.0">
          <children>
-            <Polygon fill="#ff1f1f" layoutX="123.0" layoutY="196.0" mouseTransparent="true" scaleX="0.5" scaleY="0.5" scaleZ="0.5" stroke="BLACK" strokeType="INSIDE">
-              <points>
-                <Double fx:value="-50.0" />
-                <Double fx:value="40.0" />
-                <Double fx:value="50.0" />
-                <Double fx:value="40.0" />
-                <Double fx:value="0.0" />
-                <Double fx:value="-60.0" />
-              </points>
-            </Polygon>
-            <Polygon fill="#ff1f1f" layoutX="83.0" layoutY="509.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
+            <Polygon fill="#e9f3fc" layoutX="283.0" layoutY="556.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <DropShadow />
+               </effect>
                <points>
-                  <Double fx:value="-50.0" />
-                  <Double fx:value="40.0" />
-                  <Double fx:value="50.0" />
-                  <Double fx:value="40.0" />
                   <Double fx:value="0.0" />
-                  <Double fx:value="-60.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
                </points>
             </Polygon>
-            <Polygon fill="#ff1f1f" layoutX="312.0" layoutY="525.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
+            <Polygon fill="#e9f3fc" layoutX="313.0" layoutY="442.0" scaleX="1.3" scaleY="1.3" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <DropShadow />
+               </effect>
                <points>
-                  <Double fx:value="-50.0" />
-                  <Double fx:value="40.0" />
-                  <Double fx:value="50.0" />
-                  <Double fx:value="40.0" />
                   <Double fx:value="0.0" />
-                  <Double fx:value="-60.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
                </points>
             </Polygon>
-            <Polygon fill="#ff1f1f" layoutX="318.0" layoutY="90.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
+            <Polygon fill="#7fc4fc" layoutX="170.0" layoutY="350.0" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <Glow level="0.52" />
+               </effect>
                <points>
-                  <Double fx:value="-50.0" />
-                  <Double fx:value="40.0" />
-                  <Double fx:value="50.0" />
-                  <Double fx:value="40.0" />
                   <Double fx:value="0.0" />
-                  <Double fx:value="-60.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#feffd9" layoutX="277.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#eff4f8" layoutX="268.0" layoutY="90.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="10.0" />
+               </points>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Polygon>
+            <Polygon fill="#f8e5e0" layoutX="14.0" layoutY="189.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#ffd0d7" layoutX="59.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="10.0" />
+               </points>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Polygon>
+            <Polygon fill="#eff4f8" layoutX="44.0" layoutY="457.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="10.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#cbe7ff" layoutX="215.0" layoutY="142.0" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <Glow level="0.52" />
+               </effect>
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#cbe7ff" layoutX="74.0" layoutY="341.0" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <Glow level="0.52" />
+               </effect>
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#eff4f8" layoutX="59.0" layoutY="487.0" stroke="BLACK" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="10.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="#eff4f8" layoutX="345.0" layoutY="315.0" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="10.0" />
+               </points>
+            </Polygon>
+            <Polygon fill="WHITE" layoutX="155.0" layoutY="241.0" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <points>
+                  <Double fx:value="0.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="15.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="10.0" />
+                  <Double fx:value="10.0" />
                </points>
             </Polygon>
          </children>
