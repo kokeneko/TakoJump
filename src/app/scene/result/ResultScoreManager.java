@@ -14,11 +14,13 @@ public class ResultScoreManager {
 	}
 
 	private void setScore(Label scoreLabel, int score) {
+		scoreLabel.setLayoutX(190 - (score + "").length() * 8);
 		scoreLabel.setText(score + "");
 		databaseManager.writeData(score);
 	}
 
 	private void setHighScore(Label highScoreLabel) {
+		highScoreLabel.setLayoutX(190 - (databaseManager.getData().get(0) + "").length() * 5);
 		highScoreLabel.setText(databaseManager.getData().get(0) + "");
 	}
 
