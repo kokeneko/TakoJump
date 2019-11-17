@@ -26,12 +26,18 @@ public class Tako {
 
 	public void leftSlide() {
 		if (isAir) {
+			if ( takoImage.getLayoutX() <= 0 ) {
+				takoImage.setLayoutX(takoImage.getLayoutX() + 400);
+			}
 			takoImage.setLayoutX(takoImage.getLayoutX() - 10);
 		}
 	}
 
 	public void rightSlide() {
 		if (isAir) {
+			if ( takoImage.getLayoutX() >= 400 ) {
+				takoImage.setLayoutX(takoImage.getLayoutX() - 400 );
+			}
 			takoImage.setLayoutX(takoImage.getLayoutX() + 10);
 		}
 	}
@@ -74,7 +80,6 @@ public class Tako {
 					floor.setLayoutY(y);
 
 					if ( time > 0.5 && collideObject(takoImage, floor) ) {
-						System.out.println("地面にいる");
 						isAir = false;
 						jumpTimer.stop();
 					}
