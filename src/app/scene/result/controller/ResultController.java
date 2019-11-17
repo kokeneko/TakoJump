@@ -3,13 +3,17 @@ package app.scene.result.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.font.FontManager;
 import app.scene.SceneManager;
 import app.scene.result.ResultScoreManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Polygon;
+import javafx.scene.text.Font;
 
 public class ResultController {
+
+	@FXML private Label gameoverLabel, highScoreTextLabel;
 	@FXML private Label newRecordLabel;
 	@FXML private Label scoreLabel, highScoreLabel;
 	@FXML private Label restartLabel, toTitleLabel;
@@ -32,6 +36,15 @@ public class ResultController {
 		// スコアは仮に適当な値を入れてます
 		// 確認するときは勝手に値を入れてね
 		ResultScoreManager rsm = new ResultScoreManager(scoreLabel, highScoreLabel, newRecordLabel, 1000);
+
+		FontManager fontManager = new FontManager();
+		Font font = fontManager.getFont();
+		gameoverLabel.setFont(font);
+		highScoreTextLabel.setFont(font);
+		scoreLabel.setFont(font);
+		highScoreLabel.setFont(font);
+		restartLabel.setFont(font);
+		toTitleLabel.setFont(font);
 	}
 
 	@FXML
