@@ -32,7 +32,7 @@ public class TitleController {
 		titleOptionsPath.add(SceneManager.RANKING_PATH);
 
 		FontManager fontManager = new FontManager();
-		Font font = fontManager.getFont();
+		Font font = fontManager.getFont(25);
 		startLabel.setFont(font);
 		rankingLabel.setFont(font);
 	}

@@ -28,7 +28,7 @@ public class RankingController {
 		}
 
 		FontManager fontManager = new FontManager();
-		Font font = fontManager.getFont();
+		Font font = fontManager.getFont(25);
 		rankingLabel.setFont(font);
 		transitionLabel.setFont(font);
 		for (Label rank : rankList) {

@@ -35,11 +35,12 @@ public class ResultController {
 
 		// スコアは仮に適当な値を入れてます
 		// 確認するときは勝手に値を入れてね
-		ResultScoreManager rsm = new ResultScoreManager(scoreLabel, highScoreLabel, newRecordLabel, 1000);
+		ResultScoreManager rsm = new ResultScoreManager(scoreLabel, highScoreLabel, newRecordLabel, 5000);
 
 		FontManager fontManager = new FontManager();
-		Font font = fontManager.getFont();
-		gameoverLabel.setFont(font);
+		gameoverLabel.setFont(fontManager.getFont(50));
+		newRecordLabel.setFont(fontManager.getFont(20));
+		Font font = fontManager.getFont(25);
 		highScoreTextLabel.setFont(font);
 		scoreLabel.setFont(font);
 		highScoreLabel.setFont(font);
