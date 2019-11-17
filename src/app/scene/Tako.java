@@ -45,15 +45,23 @@ public class Tako {
 	private Timeline jumpTimer;
 	private int k;
 	private float time;
+	private float addTime;
 	private double y;
 	private double groundY;
 	private Node floor;
 
-	public void jump(AnchorPane base, BackScreen backScreen, Wave wave) {
+	public void jump(AnchorPane base, BackScreen backScreen, Wave wave, int keyPressTime) {
 		isAir = true;
+		int jumpHeight; // ジャンプの高さ 要調整！
+		if ( keyPressTime <= 50 ) {
+			addTime = (float)1/keyPressTime;
+			jumpHeight = keyPressTime;
+		} else {
+			addTime = (float)1/60;
+			jumpHeight = 150;
+		}
 
 		double distortion = 1; // ゆがみ(ここを調整するとジャンプの感じが変わる) 要調整！
-		int jumpHeight = 100; // ジャンプの高さ 要調整！
 		time = 0;
 
 		jumpTimer = new Timeline();
@@ -68,7 +76,7 @@ public class Tako {
 
 		KeyFrame keyFrame = new KeyFrame(jumpDuration, (ActionEvent) ->  {
 			if ( isAir ) { // 空中の間
-				time += (float)1/50; // 要調整！
+				time += addTime;
 				// base.getChildren().get(4)が一番下の床
 				for ( k = 4; k < base.getChildren().size(); k++ ) {
 					floor = base.getChildren().get(k);
@@ -127,4 +135,4 @@ public class Tako {
 	public boolean getIsAir() {
 		return isAir;
 	}
-} 
+}
