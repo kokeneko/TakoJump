@@ -3,6 +3,7 @@ package app.scene.game.controller;
 import app.scene.BackScreen;
 import app.scene.Floor;
 import app.scene.Tako;
+import app.scene.Timer;
 import app.scene.Wave;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
@@ -21,6 +22,9 @@ public class GameController {
 
 	@FXML
 	private void initialize() {
+		Timer timer = new Timer();
+		timer.timerStart();
+
 		WaveController waveController = new WaveController();
 		wave = waveController.getWave();
 
