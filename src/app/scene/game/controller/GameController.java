@@ -36,7 +36,7 @@ public class GameController {
 		Tako tako = new Tako(takoImage);
 
 		BackScreen backScreen = new BackScreen(backScreenBase);
-		base.setOnKeyPressed(e -> keyPressedEvent(e, tako, backScreen, wave));
+		base.setOnKeyPressed(e -> keyPressedEvent(e, tako));
 		base.setOnKeyReleased(e -> keyReleasedEvent(e, tako, backScreen, wave));
 
 		Floor floor = new Floor();
@@ -49,11 +49,11 @@ public class GameController {
 
 	}
 
-	private void keyPressedEvent(KeyEvent e, Tako tako, BackScreen backScreen, Wave wave) {
+	private void keyPressedEvent(KeyEvent e, Tako tako) {
 		switch(e.getCode()) {
 			case LEFT: tako.leftSlide(); break;
 			case RIGHT: tako.rightSlide(); break;
-			case DOWN: keyPressTime+= 5;  break;
+			case DOWN: keyPressTime += 10;  break;
 			default: break;
 		}
 	}
