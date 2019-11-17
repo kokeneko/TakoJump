@@ -5,6 +5,7 @@ import java.util.List;
 
 import app.font.FontManager;
 import app.scene.SceneManager;
+import app.scene.Timer;
 import app.scene.result.ResultScoreManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -35,7 +36,7 @@ public class ResultController {
 
 		// スコアは仮に適当な値を入れてます
 		// 確認するときは勝手に値を入れてね
-		ResultScoreManager rsm = new ResultScoreManager(scoreLabel, highScoreLabel, newRecordLabel, 500000);
+		ResultScoreManager rsm = new ResultScoreManager(scoreLabel, highScoreLabel, newRecordLabel, Timer.time);
 
 		FontManager fontManager = new FontManager();
 		gameoverLabel.setFont(fontManager.getFont(50));

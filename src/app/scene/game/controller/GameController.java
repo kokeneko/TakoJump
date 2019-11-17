@@ -6,6 +6,7 @@ import java.util.List;
 import app.scene.BackScreen;
 import app.scene.Floor;
 import app.scene.Tako;
+import app.scene.Timer;
 import app.scene.Wave;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -25,6 +26,9 @@ public class GameController {
 
 	@FXML
 	private void initialize() {
+		Timer timer = new Timer();
+		timer.timerStart();
+
 		WaveController waveController = new WaveController();
 		wave = waveController.getWave();
 
