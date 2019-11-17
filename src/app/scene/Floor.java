@@ -65,10 +65,10 @@ public class Floor {
 		}
 		return group;
 	}
-
-	public int randX() {
+//画面サイズからブロック分を引く
+	public int randX(int score) {
 		Random rand = new Random();
-		return rand.nextInt(400 - (randBlocks(0) * 32));
+		return rand.nextInt(400 - (randBlocks(score) * 32));
 	}
 
 	// スコアによってブロック数を変える
@@ -90,8 +90,7 @@ public class Floor {
 	//種類をランダムに設定
 	public String randType() {
 		Random rand = new Random();
-		int randomValue = rand.nextInt(3);
-		System.out.print(randomValue);
+		int randomValue = rand.nextInt(4);
 		if (randomValue == 0) {
 			return "normal";
 		} else if (randomValue == 1) {

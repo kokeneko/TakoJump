@@ -14,6 +14,7 @@ public class Tako {
 	private boolean isAir; // 空中にいるかどうか
 	private Timeline timer;
 	private Duration duration;
+	private Floor newFloor = new Floor();
 
 	public Tako(ImageView tako) {
 		this.takoImage = tako;
