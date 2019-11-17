@@ -14,6 +14,7 @@ public class Tako {
 	private boolean isAir; // 空中にいるかどうか
 	private Timeline timer;
 	private Duration duration;
+	private Floor newFloor = new Floor();
 
 	public Tako(ImageView tako) {
 		this.takoImage = tako;
@@ -35,7 +36,6 @@ public class Tako {
 	public AnchorPane jump(AnchorPane base, BackScreen backScreen, Wave wave) {
 		// base.getChildren().get(4)が一番下の床
 		Node floor = base.getChildren().get(4);
-
 		if (isAir) {
 			floor.setLayoutY(floor.getLayoutY() + 10);
 			backScreen.downScreen(5);
