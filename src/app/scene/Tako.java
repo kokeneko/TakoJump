@@ -55,7 +55,6 @@ public class Tako {
 		int jumpHeight; // ジャンプの高さ 要調整！
 		if ( keyPressTime <= 50 ) {
 			addTime = (float)1/keyPressTime;
-			System.out.println(keyPressTime);
 			jumpHeight = keyPressTime;
 		} else {
 			addTime = (float)1/60;
