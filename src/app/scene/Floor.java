@@ -11,20 +11,26 @@ import javafx.scene.image.ImageView;
 public class Floor {
 
 	private String type; // ブロックの種類
-	private static final String FLOOR_NORMAL = "./images/floorNormal.png";
-	private static final String FLOOR_ICE = "./images/floorIce.png";
-	private static final String FLOOR_ROLL = "./images/floorRoll.png";
-	private static final String FLOOR_SLIDE = "./images/floorSlide.png";
+
+	public static final String FLOOR_NORMAL = "nomal";
+	public static final String FLOOR_ICE = "ice";
+	public static final String FLOOR_ROLL = "roll";
+	public static final String FLOOR_SLIDE = "slide";
+
+	private final String FLOOR_NORMAL_PATH = "./images/floorNormal.png";
+	private final String FLOOR_ICE_PATH = "./images/floorIce.png";
+	private final String FLOOR_ROLL_PATH = "./images/floorRoll.png";
+	private final String FLOOR_SLIDE_PATH = "./images/floorSlide.png";
 
 	private Group group = new Group(); // 床をグループ化する
 
 	// 画像をtype毎に代入する
-	public Image assignImage(String type) {
+	private Image assignImage(String type) {
 		HashMap<String, String> hashmap = new HashMap<String, String>();
-		hashmap.put("normal", FLOOR_NORMAL);
-		hashmap.put("ice", FLOOR_ICE);
-		hashmap.put("roll", FLOOR_ROLL);
-		hashmap.put("slide", FLOOR_SLIDE);
+		hashmap.put(FLOOR_NORMAL, FLOOR_NORMAL_PATH);
+		hashmap.put(FLOOR_ICE, FLOOR_ICE_PATH);
+		hashmap.put(FLOOR_ROLL, FLOOR_ROLL_PATH);
+		hashmap.put(FLOOR_SLIDE, FLOOR_SLIDE_PATH);
 
 		try {
 			this.type = getClass().getResource(hashmap.get(type)).toURI().toString();
@@ -35,7 +41,8 @@ public class Floor {
 	}
 
 	// 床を座標(x, y)にblocks 分生成する
-	public Group generate(Image image, double x, double y, int blocks) {
+	public Group generate(String type, double x, double y, int blocks) {
+		Image image = assignImage(type);
 		// blocks分
 		double width = image.getWidth();
 		for (int i = 0; i < blocks; i++) {
@@ -77,13 +84,13 @@ public class Floor {
 		Random rand = new Random();
 		int randomValue = rand.nextInt(4);
 		if (randomValue == 0) {
-			return "normal";
+			return FLOOR_NORMAL;
 		} else if (randomValue == 1) {
-			return "ice";
+			return FLOOR_ICE;
 		} else if (randomValue == 2) {
-			return "roll";
+			return FLOOR_ROLL;
 		} else {
-			return "slide";
+			return FLOOR_SLIDE;
 		}
 	}
 }
