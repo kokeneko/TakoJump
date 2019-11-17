@@ -21,6 +21,7 @@ public class GameController {
 	@FXML private ImageView takoImage;
 
 	private Wave wave;
+	private int keyPressTime = 0;
 
 	private final List<Node> floors = new ArrayList<Node>();
 
@@ -36,6 +37,7 @@ public class GameController {
 
 		BackScreen backScreen = new BackScreen(backScreenBase);
 		base.setOnKeyPressed(e -> keyPressedEvent(e, tako, backScreen, wave));
+		base.setOnKeyReleased(e -> keyReleasedEvent(e, tako, backScreen, wave));
 
 		Floor floor = new Floor();
 		//始めの床を生成し、paneに載せる
@@ -51,7 +53,14 @@ public class GameController {
 		switch(e.getCode()) {
 			case LEFT: tako.leftSlide(); break;
 			case RIGHT: tako.rightSlide(); break;
-			case DOWN: if ( !tako.getIsAir() ) { tako.jump(base, backScreen, wave); } break;
+			case DOWN: keyPressTime+= 5;  break;
+			default: break;
+		}
+	}
+
+	private void keyReleasedEvent(KeyEvent e, Tako tako, BackScreen backScreen, Wave wave) {
+		switch(e.getCode()) {
+			case DOWN: if ( !tako.getIsAir() ) { tako.jump(base, backScreen, wave, keyPressTime); keyPressTime = 0; } break;
 			default: break;
 		}
 	}
