@@ -6,21 +6,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import java.util.ArrayList?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.ranking.controller.RankingController">
+<AnchorPane fx:id="base" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #001E43;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.ranking.controller.RankingController">
    <children>
-      <Label layoutX="167.0" layoutY="23.0" text="ランキング" />
-      <VBox layoutX="101.0" layoutY="93.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <Label fx:id="rankingLabel" layoutX="140.0" layoutY="23.0" text="ランキング" textFill="WHITE" />
+      <Label fx:id="transitionLabel" layoutX="50.0" layoutY="370.0" text="←press ANY KEY to return" textFill="WHITE" />
+      <VBox layoutX="101.0" layoutY="90.0" prefHeight="310.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
          <children>
-            <Label fx:id="rank1" />
-            <Label fx:id="rank2" />
-            <Label fx:id="rank3" />
-            <Label fx:id="rank4" />
-            <Label fx:id="rank5" />
-            <Label fx:id="rank6" />
-            <Label fx:id="rank7" />
-            <Label fx:id="rank8" />
-            <Label fx:id="rank9" />
-            <Label fx:id="rank10" />
+            <Label fx:id="rank1" textFill="WHITE" />
+            <Label fx:id="rank2" textFill="WHITE" />
+            <Label fx:id="rank3" textFill="WHITE" />
+            <Label fx:id="rank4" textFill="WHITE" />
+            <Label fx:id="rank5" textFill="WHITE" />
+            <Label fx:id="rank6" textFill="WHITE" />
+            <Label fx:id="rank7" textFill="WHITE" />
+            <Label fx:id="rank8" textFill="WHITE" />
+            <Label fx:id="rank9" textFill="WHITE" />
+            <Label fx:id="rank10" textFill="WHITE" />
             <fx:define>
                <ArrayList fx:id="rankList">
                   <fx:reference source="rank1" />
