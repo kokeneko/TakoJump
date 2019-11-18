@@ -105,7 +105,7 @@ public class Tako {
 
 					if (isTop && collideObject(takoImage, floor)) {
 						floor2 = floor;
-						nextFloorY = floor.getLayoutY() - rand.nextInt(45);
+						nextFloorY = floor.getLayoutY() - rand.nextInt(40);
 						if ((childrenSize - 1) == k) {
 							base.getChildren().add(moveFloor.generate(moveFloor.randType(), nextFloorX, nextFloorY,
 									moveFloor.randBlocks(Timer.time)));

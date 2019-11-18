@@ -124,9 +124,9 @@ public class Floor {
 
 	private void iceFloor(ImageView takoImage, boolean LRFlag, int LRKeyPressTime) {
 		if (LRFlag) {
-			takoImage.setLayoutX(takoImage.getLayoutX() + LRKeyPressTime / 5);
-		} else {
 			takoImage.setLayoutX(takoImage.getLayoutX() - LRKeyPressTime / 5);
+		} else {
+			takoImage.setLayoutX(takoImage.getLayoutX() + LRKeyPressTime / 5);
 		}
 	}
 
