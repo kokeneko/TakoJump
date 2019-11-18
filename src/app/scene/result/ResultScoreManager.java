@@ -20,12 +20,14 @@ public class ResultScoreManager {
 	}
 
 	private void setHighScore(Label highScoreLabel) {
-		highScoreLabel.setLayoutX(190 - (databaseManager.getData().get(0) + "").length() * 5);
-		highScoreLabel.setText(databaseManager.getData().get(0) + "");
+		if (!databaseManager.getData().isEmpty()) {
+			highScoreLabel.setLayoutX(190 - (databaseManager.getData().get(0) + "").length() * 5);
+			highScoreLabel.setText(databaseManager.getData().get(0) + "");
+		}
 	}
 
 	private void showNewRecordLabel(Label newRecordLabel, int score) {
-		if (score > databaseManager.getData().get(0)) {
+		if (!databaseManager.getData().isEmpty() && (score > databaseManager.getData().get(0))) {
 			newRecordLabel.setVisible(true);
 		}
 		else {

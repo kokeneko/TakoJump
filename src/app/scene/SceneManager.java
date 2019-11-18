@@ -16,10 +16,10 @@ public class SceneManager {
 	public static Stage stage = new Stage();
 	public static Scene scene;
 
-	public static final String TITLE_PATH = "./title/fxml/Title.fxml";
-	public static final String GAME_PATH = "./game/fxml/Game.fxml";
-	public static final String RESULT_PATH = "./result/fxml/Result.fxml";
-	public static final String RANKING_PATH = "./ranking/fxml/Ranking.fxml";
+	public static final String TITLE_PATH = "title/fxml/Title.fxml";
+	public static final String GAME_PATH = "game/fxml/Game.fxml";
+	public static final String RESULT_PATH = "result/fxml/Result.fxml";
+	public static final String RANKING_PATH = "ranking/fxml/Ranking.fxml";
 
 	private final Map<String, AnchorPane> roots = new HashMap<>();
 
