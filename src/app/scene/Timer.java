@@ -31,10 +31,10 @@ public class Timer {
 		// timeに応じて早さを変える
 		switch (time) {
 			case 0: wave.waveStart(2); break;
-			case 5: wave.waveStart(1.5); break;
-			case 15: wave.waveStart(1.0); break;
-			case 20: wave.waveStart(0.7); break;
-			case 25: wave.waveStart(0.5); break;
+			case 5: wave.waveStart(1.0); break;
+			case 15: wave.waveStart(0.7); break;
+			case 20: wave.waveStart(0.5); break;
+			case 25: wave.waveStart(0.3); break;
 			default: break;
 		}
 	}
