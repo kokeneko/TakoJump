@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 public class Floor {
 
 	private String type; // ブロックの種類
+	private double speed = 1.5;// スライドブロックの速さ
 
 	public static final String FLOOR_NORMAL = "nomal";
 	public static final String FLOOR_ICE = "ice";
@@ -52,6 +53,7 @@ public class Floor {
 			group.getChildren().add(imageView);
 			x += width;
 		}
+		group.setId(type);
 		return group;
 	}
 
@@ -82,14 +84,62 @@ public class Floor {
 	public String randType() {
 		Random rand = new Random();
 		switch (rand.nextInt(4)) {
-		case 0: return FLOOR_NORMAL;
-		case 1: return FLOOR_ICE;
-		case 2: return FLOOR_ROLL;
-		case 3: return FLOOR_SLIDE;
-		default: break;
+		case 0:
+			return FLOOR_NORMAL;
+		case 1:
+			return FLOOR_ICE;
+		case 2:
+			return FLOOR_ROLL;
+		case 3:
+			return FLOOR_SLIDE;
+		default:
+			break;
 		}
 
 		return FLOOR_NORMAL;
+	}
+
+	public void checkFloor(ImageView takoImage, Group floor, boolean LRFlag, int LRKeyPressTime) {
+		// System.out.print(floor.getId());
+		switch (floor.getId()) {
+		case FLOOR_ICE:
+			iceFloor(takoImage, LRFlag, LRKeyPressTime);
+			break;
+		case FLOOR_ROLL:
+			rollFloor(takoImage);
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void rollFloor(ImageView takoImage) {
+		if (takoImage.getLayoutX() <= 0) {
+			takoImage.setLayoutX(takoImage.getLayoutX() + 400);
+		}
+		if (takoImage.getLayoutX() >= 400) {
+			takoImage.setLayoutX(takoImage.getLayoutX() - 400);
+		}
+		takoImage.setLayoutX(takoImage.getLayoutX() - 3);
+	}
+
+	private void iceFloor(ImageView takoImage, boolean LRFlag, int LRKeyPressTime) {
+		if (LRFlag) {
+			takoImage.setLayoutX(takoImage.getLayoutX() + LRKeyPressTime);
+		} else {
+			takoImage.setLayoutX(takoImage.getLayoutX() - LRKeyPressTime);
+		}
+	}
+
+	public void slideFloor(ImageView takoImage, Group floor) {
+		// System.out.print(floor.getLayoutX());
+		if (floor.getId().equals(FLOOR_NORMAL)) {
+			floor.setLayoutX(floor.getLayoutX() - speed);
+			takoImage.setLayoutX(takoImage.getLayoutX() - speed);
+			if (floor.getLayoutX() < 0 || 300 < floor.getLayoutX()) {
+				speed *= -1;
+			}
+		}
 	}
 
 }

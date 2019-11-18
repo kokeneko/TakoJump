@@ -5,6 +5,7 @@ import java.util.List;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -17,7 +18,9 @@ public class Tako {
 	private static boolean isAir; // 空中にいるかどうか
 	private Timeline timeline;
 	private Duration duration;
-	private Floor newFloor = new Floor();
+	private Timeline moveFloorsTimer;
+	private Floor moveFloor = new Floor();
+	private boolean LRFlag;
 
 	public Tako(ImageView tako) {
 		this.takoImage = tako;
@@ -25,6 +28,7 @@ public class Tako {
 	}
 
 	public void leftSlide() {
+		LRFlag = true;
 		if (isAir) {
 			if ( takoImage.getLayoutX() <= 0 ) {
 				takoImage.setLayoutX(takoImage.getLayoutX() + 400);
@@ -34,6 +38,7 @@ public class Tako {
 	}
 
 	public void rightSlide() {
+		LRFlag = false;
 		if (isAir) {
 			if ( takoImage.getLayoutX() >= 400 ) {
 				takoImage.setLayoutX(takoImage.getLayoutX() - 400 );
@@ -45,19 +50,19 @@ public class Tako {
 	private Timeline jumpTimer;
 	private int k;
 	private double y;
-	private Node floor;
+	private Group floor;
 	private double time;			// x軸の値
 	private int height;
 	private double scale;
 	private double moveDistance;
 	private boolean isTop;
 
-	public void jump(AnchorPane base, BackScreen backScreen, Wave wave, int keyPressTime) {
+	public void jump(AnchorPane base, BackScreen backScreen, Wave wave, int downKeyPressTIme, int LRKeyPressTime) {
 		isAir = true;
 		isTop = false;
 		time = 0;
-		if ( keyPressTime <= 100 ) {
-			height = keyPressTime;
+		if ( downKeyPressTIme <= 100 ) {
+			height = downKeyPressTIme;
 			scale = 4.0 - (double)height/50;
 		} else {
 			height = 120;
@@ -78,7 +83,7 @@ public class Tako {
 				time += (double)1/60;
 				// base.getChildren().get(4)が一番下の床
 				for ( k = 4; k < base.getChildren().size(); k++ ) {
-					floor = base.getChildren().get(k);
+					floor = (Group)base.getChildren().get(k);
 
 					y = - height * Math.E * (time * scale) * Math.log(time * scale) + list.get(k);
 					moveDistance = y - list.get(k);	// 実際に動いた距離
@@ -101,6 +106,19 @@ public class Tako {
 		jumpTimer = new Timeline(keyFrame);
 		jumpTimer.setCycleCount(Timeline.INDEFINITE);
 		jumpTimer.play();
+
+		// 動く床のタイムライン
+				moveFloorsTimer = new Timeline();
+				Duration checkDuration = Duration.millis(50);
+				KeyFrame floorsFlame = new KeyFrame(checkDuration, (ActionEvent) -> {
+					moveFloor.slideFloor(takoImage, floor);
+					if (collideObject(takoImage, floor)) {
+						moveFloor.checkFloor(takoImage, floor, LRFlag, LRKeyPressTime);
+					}
+				});
+				moveFloorsTimer = new Timeline(floorsFlame);
+				moveFloorsTimer.setCycleCount(Timeline.INDEFINITE);
+				moveFloorsTimer.play();
 	}
 
 	// object1とobject2がぶつかっているかを返す
