@@ -53,14 +53,14 @@ public class GameController {
 		switch(e.getCode()) {
 			case LEFT: tako.leftSlide(); break;
 			case RIGHT: tako.rightSlide(); break;
-			case DOWN: keyPressTime += 20;  break;
+			case C: keyPressTime += 20;  break;
 			default: break;
 		}
 	}
 
 	private void keyReleasedEvent(KeyEvent e, Tako tako, BackScreen backScreen, Wave wave) {
 		switch(e.getCode()) {
-			case DOWN: if ( !tako.getIsAir() ) { tako.jump(base, backScreen, wave, keyPressTime); keyPressTime = 0; } break;
+			case C: if ( !tako.getIsAir() ) { tako.jump(base, backScreen, wave, keyPressTime); keyPressTime = 0; } break;
 			default: break;
 		}
 	}
