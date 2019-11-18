@@ -44,25 +44,25 @@ public class Tako {
 
 	private Timeline jumpTimer;
 	private int k;
-	private float time;
-	private float addTime;
 	private double y;
-	private double groundY;
 	private Node floor;
+	private double time;			// x軸の値
+	private int height;
+	private double scale;
+	private double moveDistance;
+	private boolean isTop;
 
 	public void jump(AnchorPane base, BackScreen backScreen, Wave wave, int keyPressTime) {
 		isAir = true;
-		int jumpHeight; // ジャンプの高さ 要調整！
-		if ( keyPressTime <= 50 ) {
-			addTime = (float)1/keyPressTime;
-			jumpHeight = keyPressTime;
-		} else {
-			addTime = (float)1/60;
-			jumpHeight = 150;
-		}
-
-		double distortion = 1; // ゆがみ(ここを調整するとジャンプの感じが変わる) 要調整！
+		isTop = false;
 		time = 0;
+		if ( keyPressTime <= 100 ) {
+			height = keyPressTime;
+			scale = 4.0 - (double)height/50;
+		} else {
+			height = 120;
+			scale = 1.0;
+		}
 
 		jumpTimer = new Timeline();
 		Duration jumpDuration = Duration.millis(50);
@@ -73,21 +73,22 @@ public class Tako {
 		for ( listNumber = 0; listNumber < base.getChildren().size(); listNumber++ ) {
 			list.add(base.getChildren().get(listNumber).getLayoutY());
 		}
-
 		KeyFrame keyFrame = new KeyFrame(jumpDuration, (ActionEvent) ->  {
 			if ( isAir ) { // 空中の間
-				time += addTime;
+				time += (double)1/60;
 				// base.getChildren().get(4)が一番下の床
 				for ( k = 4; k < base.getChildren().size(); k++ ) {
 					floor = base.getChildren().get(k);
 
-					// 床の座標獲得
-					groundY = list.get(k);
-					// 次の座標計算
-					y = groundY + (1.0 - Math.pow(1.0 - Math.sin(Math.PI*time), distortion))*jumpHeight;
+					y = - height * Math.E * (time * scale) * Math.log(time * scale) + list.get(k);
+					moveDistance = y - list.get(k);	// 実際に動いた距離
 					floor.setLayoutY(y);
 
-					if ( time > 0.5 && collideObject(takoImage, floor) ) {
+					if ( moveDistance + 0.1 >= height ) {
+						isTop = true;
+					}
+
+					if ( isTop && collideObject(takoImage, floor) ) {
 						isAir = false;
 						jumpTimer.stop();
 					}

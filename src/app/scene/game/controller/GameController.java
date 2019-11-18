@@ -53,7 +53,7 @@ public class GameController {
 		switch(e.getCode()) {
 			case LEFT: tako.leftSlide(); break;
 			case RIGHT: tako.rightSlide(); break;
-			case DOWN: keyPressTime += 10;  break;
+			case DOWN: keyPressTime += 20;  break;
 			default: break;
 		}
 	}
