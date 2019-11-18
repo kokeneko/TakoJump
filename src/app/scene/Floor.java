@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 public class Floor {
 
 	private String type; // ブロックの種類
+	private double speed = 1;// スライドブロックの速さ
 
 	public static final String FLOOR_NORMAL = "nomal";
 	public static final String FLOOR_ICE = "ice";
@@ -52,6 +53,8 @@ public class Floor {
 			group.getChildren().add(imageView);
 			x += width;
 		}
+		// グループの種類
+		group.setId(type);
 		return group;
 	}
 
@@ -64,13 +67,13 @@ public class Floor {
 	// スコアによってブロック数を変える
 	public int randBlocks(int score) {
 		int blocks;
-		if (score <= 5000) {
+		if (score <= 80) {
 			blocks = 5;
-		} else if (score <= 10000) {
+		} else if (score <= 100) {
 			blocks = 4;
-		} else if (score <= 15000) {
+		} else if (score <= 120) {
 			blocks = 3;
-		} else if (score <= 20000) {
+		} else if (score <= 200) {
 			blocks = 2;
 		} else {
 			blocks = 1;
@@ -82,14 +85,62 @@ public class Floor {
 	public String randType() {
 		Random rand = new Random();
 		switch (rand.nextInt(4)) {
-		case 0: return FLOOR_NORMAL;
-		case 1: return FLOOR_ICE;
-		case 2: return FLOOR_ROLL;
-		case 3: return FLOOR_SLIDE;
-		default: break;
+		case 0:
+			return FLOOR_NORMAL;
+		case 1:
+			return FLOOR_ICE;
+		case 2:
+			return FLOOR_ROLL;
+		case 3:
+			return FLOOR_SLIDE;
+		default:
+			break;
 		}
-
 		return FLOOR_NORMAL;
 	}
 
+	public void checkFloor(ImageView takoImage, Group floor, boolean LRFlag, int LRKeyPressTime) {
+		switch (floor.getId()) {
+		case FLOOR_ICE:
+			iceFloor(takoImage, LRFlag, LRKeyPressTime);
+			break;
+		case FLOOR_ROLL:
+			rollFloor(takoImage);
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void rollFloor(ImageView takoImage) {
+		if (takoImage.getLayoutX() <= 0) {
+			takoImage.setLayoutX(takoImage.getLayoutX() + 400);
+		}
+		if (takoImage.getLayoutX() >= 400) {
+			takoImage.setLayoutX(takoImage.getLayoutX() - 400);
+		}
+		takoImage.setLayoutX(takoImage.getLayoutX() - 1);
+	}
+
+	private void iceFloor(ImageView takoImage, boolean LRFlag, int LRKeyPressTime) {
+		if (LRFlag) {
+			takoImage.setLayoutX(takoImage.getLayoutX() - LRKeyPressTime / 5);
+		} else {
+			takoImage.setLayoutX(takoImage.getLayoutX() + LRKeyPressTime / 5);
+		}
+	}
+
+	public void slideFloor(ImageView takoImage, Group floor) {
+		// System.out.print(floor.getLayoutX());
+		try {
+			if (floor.getId().equals(FLOOR_SLIDE)) {
+				floor.setLayoutX(floor.getLayoutX() - speed);
+				takoImage.setLayoutX(takoImage.getLayoutX() - speed);
+				if (floor.getLayoutX() < 0 || 300 < floor.getLayoutX()) {
+					speed *= -1;
+				}
+			}
+		} catch (NullPointerException e) {
+		}
+	}
 }
