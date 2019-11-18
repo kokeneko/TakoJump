@@ -95,7 +95,7 @@ public class Tako {
 				}
 				// 床と背景降下
 				wave.waveDown(y);
-				backScreen.downScreen(y);
+				backScreen.downScreen(y/3);
 			}
 		});
 		jumpTimer = new Timeline(keyFrame);
