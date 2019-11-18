@@ -118,9 +118,9 @@ public class Tako {
 				// 床と背景降下
 				wave.waveDown(waveLayoutY + moveDistance);
 				if(isTop) {
-					backScreen.downScreen(-2);
+					backScreen.downBackScreen(-2);
 				}else {
-					backScreen.downScreen(2);
+					backScreen.downBackScreen(2);
 				}
 			}
 		});
@@ -143,8 +143,12 @@ public class Tako {
 
 	// object1とobject2がぶつかっているかを返す
 	private boolean collideObject(Node object1, Node object2) {
+		try {
 		if (object1.getBoundsInParent().intersects(object2.getBoundsInParent())) {
 			return true;
+		}
+		}catch(NullPointerException e) {
+
 		}
 		return false;
 	}
