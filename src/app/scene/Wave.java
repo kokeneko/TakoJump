@@ -24,7 +24,7 @@ public class Wave {
 			if ( wave.getLayoutY() <= 0 ) {
 				waveStop();
 			}
-			waveUp(10);
+			waveUp(15);
 		});
 		timer = new Timeline(keyFrame);
 		timer.setCycleCount(Timeline.INDEFINITE);
@@ -44,7 +44,11 @@ public class Wave {
 	}
 
 	public void waveDown(double downWidth) {
-		wave.setTranslateY(downWidth);
+		wave.setLayoutY(downWidth);
+	}
+
+	public double getWaveY() {
+		return wave.getLayoutY();
 	}
 
 	public Rectangle getWaveRectangle() {
