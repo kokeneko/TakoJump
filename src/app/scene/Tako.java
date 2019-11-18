@@ -2,6 +2,7 @@ package app.scene;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -51,17 +52,25 @@ public class Tako {
 	private double scale;
 	private double moveDistance;
 	private boolean isTop;
+	private double waveLayoutY;
+	private double nextFloorY;
 
 	public void jump(AnchorPane base, BackScreen backScreen, Wave wave, int keyPressTime) {
 		isAir = true;
 		isTop = false;
 		time = 0;
-		if ( keyPressTime <= 100 ) {
+
+		Random rand = new Random();
+		int nextFloorX = rand.nextInt(35)*10;
+		// 最初の波の高さ
+		waveLayoutY = wave.getWaveY();
+
+		if ( keyPressTime <= 150 ) {
 			height = keyPressTime;
 			scale = 4.0 - (double)height/50;
 		} else {
-			height = 120;
-			scale = 1.0;
+			height = 200;
+			scale = 0.7;
 		}
 
 		jumpTimer = new Timeline();
@@ -70,14 +79,17 @@ public class Tako {
 		int listNumber;
 		List<Double> list = new ArrayList<Double>();
 		// listにchildren()のy座標を格納
-		for ( listNumber = 0; listNumber < base.getChildren().size(); listNumber++ ) {
+		int childrenSize = base.getChildren().size();
+		for ( listNumber = 0; listNumber < childrenSize; listNumber++ ) {
 			list.add(base.getChildren().get(listNumber).getLayoutY());
+			System.out.println(list.get(listNumber));
 		}
+
 		KeyFrame keyFrame = new KeyFrame(jumpDuration, (ActionEvent) ->  {
 			if ( isAir ) { // 空中の間
 				time += (double)1/60;
 				// base.getChildren().get(4)が一番下の床
-				for ( k = 4; k < base.getChildren().size(); k++ ) {
+				for ( k = 4; k < childrenSize; k++ ) {
 					floor = base.getChildren().get(k);
 
 					y = - height * Math.E * (time * scale) * Math.log(time * scale) + list.get(k);
@@ -89,13 +101,18 @@ public class Tako {
 					}
 
 					if ( isTop && collideObject(takoImage, floor) ) {
+						nextFloorY = floor.getLayoutY() - rand.nextInt(50);
+						if ( (childrenSize - 1) == k ) {
+							base.getChildren().add(newFloor.generate(newFloor.randType(), nextFloorX, nextFloorY, newFloor.randBlocks(Timer.time)));
+						}
 						isAir = false;
+						// 床のランダム生成
 						jumpTimer.stop();
 					}
 				}
 				// 床と背景降下
-				wave.waveDown(y);
-				backScreen.downScreen(y);
+				wave.waveDown(waveLayoutY + moveDistance);
+				backScreen.downScreen(5);
 			}
 		});
 		jumpTimer = new Timeline(keyFrame);

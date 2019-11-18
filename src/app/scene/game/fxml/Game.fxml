@@ -11,7 +11,7 @@
 <AnchorPane fx:id="base" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #333366;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.game.controller.GameController">
    <children>
       <fx:include fx:id="backScreenBase" source="GameBackScreen.fxml" />
-      <Button layoutX="161.0" layoutY="181.0" mnemonicParsing="false" text="ゲーム画面だよ" />
+      <Button layoutX="450.0" layoutY="460.0" mnemonicParsing="false" text="" />
       <ImageView fx:id="takoImage" fitHeight="32.0" fitWidth="32.0" layoutX="200.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/tako.png" />
