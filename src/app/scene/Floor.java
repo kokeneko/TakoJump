@@ -136,7 +136,7 @@ public class Floor {
 			if (floor.getId().equals(FLOOR_SLIDE)) {
 				floor.setLayoutX(floor.getLayoutX() - speed);
 				takoImage.setLayoutX(takoImage.getLayoutX() - speed);
-				if (floor.getLayoutX() < 0 || 300 < floor.getLayoutX()) {
+				if (floor.getLayoutX() < 0 || 250 < floor.getLayoutX()) {
 					speed *= -1;
 				}
 			}

@@ -1,15 +1,11 @@
 package app.scene.game.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import app.scene.BackScreen;
 import app.scene.Floor;
 import app.scene.Tako;
 import app.scene.Timer;
 import app.scene.Wave;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -26,8 +22,6 @@ public class GameController {
 	private Wave wave;
 	private int downKeyPressTime = 0;
 	private int LRKeyPressTime = 0;
-
-	private final List<Node> floors = new ArrayList<Node>();
 
 	@FXML
 	private void initialize() {
