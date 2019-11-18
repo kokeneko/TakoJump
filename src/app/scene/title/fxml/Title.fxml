@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.control.*?>
@@ -9,7 +10,11 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #001E43;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.scene.title.controller.TitleController">
    <children>
-      <Label fx:id="titleLogo" layoutX="150.0" layoutY="76.0" text="タコジャンプ" />
+      <ImageView fx:id="titleLogo" fitHeight="191.0" fitWidth="376.0" layoutX="5.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/titleLogo.png" />
+         </image>
+      </ImageView>
       <Label fx:id="startLabel" layoutX="150.0" layoutY="235.0" onMouseClicked="#startGame" text="スタート" textFill="WHITE" />
       <Label fx:id="rankingLabel" layoutX="140.0" layoutY="290.0" onMouseClicked="#transitionRanking" text="ランキング" textFill="WHITE" />
       <Polygon fx:id="cursorPolygon" fill="WHITE" layoutX="110.0" layoutY="260.0" rotate="90.0" scaleX="0.2" scaleY="0.2" stroke="BLACK" strokeType="INSIDE">
