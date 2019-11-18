@@ -18,10 +18,10 @@ public class Floor {
 	public static final String FLOOR_ROLL = "roll";
 	public static final String FLOOR_SLIDE = "slide";
 
-	private final String FLOOR_NORMAL_PATH = "./images/floorNormal.png";
-	private final String FLOOR_ICE_PATH = "./images/floorIce.png";
-	private final String FLOOR_ROLL_PATH = "./images/floorRoll.png";
-	private final String FLOOR_SLIDE_PATH = "./images/floorSlide.png";
+	private final String FLOOR_NORMAL_PATH = "images/floorNormal.png";
+	private final String FLOOR_ICE_PATH = "images/floorIce.png";
+	private final String FLOOR_ROLL_PATH = "images/floorRoll.png";
+	private final String FLOOR_SLIDE_PATH = "images/floorSlide.png";
 
 	// 画像をtype毎に代入する
 	private Image assignImage(String type) {

@@ -20,7 +20,9 @@ public class DatabaseManager {
 
 		try {
 			// ファイルのパスを指定する
-			file = new File("./src/app/database/data.txt");
+			File dir = new File("src/app/database");
+		    dir.mkdirs();
+			file = new File(dir, "data.txt");
 			if (!file.exists()) {
 				file.createNewFile();
 			}
